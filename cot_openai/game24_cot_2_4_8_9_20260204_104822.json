@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:22.738624",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 2.01
+  },
+  "problem": {
+    "numbers": [
+      2,
+      4,
+      8,
+      9
+    ],
+    "input_string": "2 4 8 9"
+  },
+  "solution": {
+    "steps": [
+      "8 / 4 = 2 (left: 2 2 9)",
+      "2 + 2 = 4 (left: 4 9)",
+      "4 * 9 = 36 (left: 36)"
+    ],
+    "final_result": "36",
+    "expression": "(2 + 2) * 9",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "8 / 4 = 2 (left: 2 2 9)  \n2 + 2 = 4 (left: 4 9)  \n4 * 9 = 36 (left: 36)  \nAnswer: (2 + 2) * 9  "
+  }
+}

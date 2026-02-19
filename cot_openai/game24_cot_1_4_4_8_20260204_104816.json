@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:16.758720",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.75
+  },
+  "problem": {
+    "numbers": [
+      1,
+      4,
+      4,
+      8
+    ],
+    "input_string": "1 4 4 8"
+  },
+  "solution": {
+    "steps": [
+      "8 / 4 = 2 (left: 1 2 4)",
+      "1 + 2 = 3 (left: 3 4)",
+      "3 * 4 = 12 (left: 12)"
+    ],
+    "final_result": "12",
+    "expression": "(1 + 8 / 4) * 4",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "8 / 4 = 2 (left: 1 2 4)  \n1 + 2 = 3 (left: 3 4)  \n3 * 4 = 12 (left: 12)  \nAnswer: (1 + 8 / 4) * 4"
+  }
+}

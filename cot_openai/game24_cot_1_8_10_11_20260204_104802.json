@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:02.689246",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 2.46
+  },
+  "problem": {
+    "numbers": [
+      1,
+      8,
+      10,
+      11
+    ],
+    "input_string": "1 8 10 11"
+  },
+  "solution": {
+    "steps": [
+      "11 - 1 = 10 (left: 8 10 10)",
+      "10 / 10 = 1 (left: 8 1)",
+      "8 * 1 = 8 (left: 8)"
+    ],
+    "final_result": "8",
+    "expression": "(11 - 1) * (10 / 10)",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "11 - 1 = 10 (left: 8 10 10)  \n10 / 10 = 1 (left: 8 1)  \n8 * 1 = 8 (left: 8)  \nAnswer: (11 - 1) * (10 / 10)  "
+  }
+}

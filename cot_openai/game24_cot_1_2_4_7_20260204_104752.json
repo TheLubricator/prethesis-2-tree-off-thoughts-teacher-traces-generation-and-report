@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:47:52.287164",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.82
+  },
+  "problem": {
+    "numbers": [
+      1,
+      2,
+      4,
+      7
+    ],
+    "input_string": "1 2 4 7"
+  },
+  "solution": {
+    "steps": [
+      "4 * 2 = 8 (left: 1 7 8)",
+      "7 - 1 = 6 (left: 6 8)",
+      "6 * 8 = 48 (left: 48)"
+    ],
+    "final_result": "48",
+    "expression": "(4 * 2) * (7 - 1)",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "4 * 2 = 8 (left: 1 7 8)  \n7 - 1 = 6 (left: 6 8)  \n6 * 8 = 48 (left: 48)  \nAnswer: (4 * 2) * (7 - 1)"
+  }
+}

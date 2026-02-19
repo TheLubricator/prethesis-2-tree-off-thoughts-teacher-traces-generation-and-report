@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:26.549680",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.85
+  },
+  "problem": {
+    "numbers": [
+      2,
+      2,
+      7,
+      12
+    ],
+    "input_string": "2 2 7 12"
+  },
+  "solution": {
+    "steps": [
+      "12 - 7 = 5 (left: 2 2 5)",
+      "2 + 2 = 4 (left: 4 5)",
+      "4 * 5 = 20 (left: 20)"
+    ],
+    "final_result": "20",
+    "expression": "(2 + 2) * (12 - 7)",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "12 - 7 = 5 (left: 2 2 5)  \n2 + 2 = 4 (left: 4 5)  \n4 * 5 = 20 (left: 20)  \nAnswer: (2 + 2) * (12 - 7)"
+  }
+}

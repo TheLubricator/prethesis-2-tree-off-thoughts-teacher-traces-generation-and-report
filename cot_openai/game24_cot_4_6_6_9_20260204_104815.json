@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:15.008424",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.99
+  },
+  "problem": {
+    "numbers": [
+      4,
+      6,
+      6,
+      9
+    ],
+    "input_string": "4 6 6 9"
+  },
+  "solution": {
+    "steps": [
+      "6 - 4 = 2 (left: 2 6 9)",
+      "6 * 2 = 12 (left: 12 9)",
+      "12 + 9 = 21 (left: 21)"
+    ],
+    "final_result": "21",
+    "expression": "(6 - 4) * 6 + 9",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "6 - 4 = 2 (left: 2 6 9)  \n6 * 2 = 12 (left: 12 9)  \n12 + 9 = 21 (left: 21)  \nAnswer: (6 - 4) * 6 + 9"
+  }
+}

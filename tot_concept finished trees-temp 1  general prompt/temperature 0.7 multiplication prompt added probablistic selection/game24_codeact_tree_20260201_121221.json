@@ -1,0 +1,1545 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-01T12:12:21.735734",
+    "mode": "CodeAct",
+    "parameters": {
+      "temperature": 0.7,
+      "n_evaluate_sample": 3,
+      "n_select_sample": 10,
+      "max_steps": 4,
+      "api_delay": 3.5
+    },
+    "statistics": {
+      "total_nodes": 79,
+      "api_calls": 97,
+      "cache_hits": 3,
+      "solutions_found": 2,
+      "code_executions": 85,
+      "code_errors": 0,
+      "daily_requests": 97,
+      "session_start": "2026-02-01T11:55:11.607419"
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "state": "",
+      "action": "START",
+      "value": 0.0,
+      "depth": 0,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": null,
+      "children_ids": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Initial state",
+        "code": "",
+        "observation": "Starting numbers: [1, 4, 8, 8]"
+      },
+      "path_history": ""
+    },
+    {
+      "id": 2,
+      "state": "[5, 8, 8]",
+      "action": "[5, 8, 8]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]",
+        "code": "numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[5, 8, 8]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]"
+    },
+    {
+      "id": 3,
+      "state": "[32, 1, 8]",
+      "action": "[32, 1, 8]",
+      "value": 3.5999999999999996,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]",
+        "code": "numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[32, 1, 8]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]"
+    },
+    {
+      "id": 4,
+      "state": "[7, 4, 8]",
+      "action": "[7, 4, 8]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]",
+        "code": "numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[7, 4, 8]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]"
+    },
+    {
+      "id": 5,
+      "state": "[2.0, 1, 8]",
+      "action": "[2.0, 1, 8]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]",
+        "code": "numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.0, 1, 8]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]"
+    },
+    {
+      "id": 6,
+      "state": "[64, 1, 4]",
+      "action": "[64, 1, 4]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]",
+        "code": "numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[64, 1, 4]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]"
+    },
+    {
+      "id": 7,
+      "state": "[33, 8]",
+      "action": "[33, 8]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]",
+        "code": "numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[33, 8]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nAdd 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [33, 8]"
+    },
+    {
+      "id": 8,
+      "state": "[31, 8]",
+      "action": "[31, 8]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]",
+        "code": "numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[31, 8]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nSubtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [31, 8]"
+    },
+    {
+      "id": 9,
+      "state": "[256, 1]",
+      "action": "[256, 1]",
+      "value": 60.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 32 and 8 to get 256 [32 * 8 = 256] → [256, 1]",
+        "code": "numbers = [32, 1, 8]\nres = numbers[0] * numbers[2]  # 32 * 8 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[256, 1]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nMultiply 32 and 8 to get 256 [32 * 8 = 256] → [256, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] * numbers[2]  # 32 * 8 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]"
+    },
+    {
+      "id": 10,
+      "state": "[4.0, 1]",
+      "action": "[4.0, 1]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]",
+        "code": "numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4.0, 1]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]"
+    },
+    {
+      "id": 11,
+      "state": "[8.0, 32]",
+      "action": "[8.0, 32]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 3,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 1 to get 8 [8 / 1 = 8] → [32, 8]",
+        "code": "numbers = [32, 1, 8]\nres = numbers[2] / numbers[1]  # 8 / 1 = 8\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[8.0, 32]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 8 by 1 to get 8 [8 / 1 = 8] → [32, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[2] / numbers[1]  # 8 / 1 = 8\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8.0, 32]"
+    },
+    {
+      "id": 12,
+      "state": "[13, 8]",
+      "action": "[13, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 5 and 8 to get 13 [5 + 8 = 13] → [13, 8]",
+        "code": "numbers = [5, 8, 8]\nres = numbers[0] + numbers[1]  # 5 + 8 = 13\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[13, 8]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nAdd 5 and 8 to get 13 [5 + 8 = 13] → [13, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[0] + numbers[1]  # 5 + 8 = 13\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [13, 8]"
+    },
+    {
+      "id": 13,
+      "state": "[40, 8]",
+      "action": "[40, 8]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 5 and 8 to get 40 [5 * 8 = 40] → [40, 8]",
+        "code": "numbers = [5, 8, 8]\nres = numbers[0] * numbers[1]  # 5 * 8 = 40\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[40, 8]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nMultiply 5 and 8 to get 40 [5 * 8 = 40] → [40, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[0] * numbers[1]  # 5 * 8 = 40\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [40, 8]"
+    },
+    {
+      "id": 14,
+      "state": "[3, 8]",
+      "action": "[3, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]",
+        "code": "numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3, 8]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]"
+    },
+    {
+      "id": 15,
+      "state": "[1.6, 8]",
+      "action": "[1.6, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 5 to get 1.6 [8 / 5 = 1.6] → [1.6, 8]",
+        "code": "numbers = [5, 8, 8]\nres = numbers[1] / numbers[0]  # 8 / 5 = 1.6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.6, 8]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nDivide 8 by 5 to get 1.6 [8 / 5 = 1.6] → [1.6, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] / numbers[0]  # 8 / 5 = 1.6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.6, 8]"
+    },
+    {
+      "id": 16,
+      "state": "[64, 5]",
+      "action": "[64, 5]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [5, 64]",
+        "code": "numbers = [5, 8, 8]\nres = numbers[1] * numbers[2]  # 8 * 8 = 64\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[64, 5]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nMultiply 8 and 8 to get 64 [8 * 8 = 64] → [5, 64]\nCode: numbers = [5, 8, 8]\nres = numbers[1] * numbers[2]  # 8 * 8 = 64\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 5]"
+    },
+    {
+      "id": 17,
+      "state": "[11, 8]",
+      "action": "[11, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 7 and 4 to get 11 [7 + 4 = 11] → [11, 8]",
+        "code": "numbers = [7, 4, 8]\nres = numbers[0] + numbers[1]  # 7 + 4 = 11\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[11, 8]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nAdd 7 and 4 to get 11 [7 + 4 = 11] → [11, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] + numbers[1]  # 7 + 4 = 11\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 8]"
+    },
+    {
+      "id": 18,
+      "state": "[28, 8]",
+      "action": "[28, 8]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 4,
+      "children_ids": [
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]",
+        "code": "numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[28, 8]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [28, 8]"
+    },
+    {
+      "id": 19,
+      "state": "[2.0, 7]",
+      "action": "[2.0, 7]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [7, 2]",
+        "code": "numbers = [7, 4, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.0, 7]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nDivide 8 by 4 to get 2 [8 / 4 = 2] → [7, 2]\nCode: numbers = [7, 4, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 7]"
+    },
+    {
+      "id": 20,
+      "state": "[3, 8]",
+      "action": "[3, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 4,
+      "children_ids": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]",
+        "code": "numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3, 8]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nSubtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]"
+    },
+    {
+      "id": 21,
+      "state": "[56, 4]",
+      "action": "[56, 4]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 7 and 8 to get 56 [7 * 8 = 56] → [56, 4]",
+        "code": "numbers = [7, 4, 8]\nres = numbers[0] * numbers[2]  # 7 * 8 = 56\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[56, 4]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 8 to get 56 [7 * 8 = 56] → [56, 4]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[2]  # 7 * 8 = 56\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [56, 4]"
+    },
+    {
+      "id": 22,
+      "state": "[3.0, 8]",
+      "action": "[3.0, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 2.0 and 1 to get 3.0 [2.0 + 1 = 3.0] → [3.0, 8]",
+        "code": "numbers = [2.0, 1, 8]\nres = numbers[0] + numbers[1]  # 2.0 + 1 = 3.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.0, 8]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nAdd 2.0 and 1 to get 3.0 [2.0 + 1 = 3.0] → [3.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] + numbers[1]  # 2.0 + 1 = 3.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.0, 8]"
+    },
+    {
+      "id": 23,
+      "state": "[2.0, 8]",
+      "action": "[2.0, 8]",
+      "value": 60.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 5,
+      "children_ids": [
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]",
+        "code": "numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.0, 8]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nMultiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 8]"
+    },
+    {
+      "id": 24,
+      "state": "[4.0, 1]",
+      "action": "[4.0, 1]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 2.0 to get 4.0 [8 / 2.0 = 4.0] → [4.0, 1]",
+        "code": "numbers = [2.0, 1, 8]\nres = numbers[2] / numbers[0]  # 8 / 2.0 = 4.0\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4.0, 1]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nDivide 8 by 2.0 to get 4.0 [8 / 2.0 = 4.0] → [4.0, 1]\nCode: numbers = [2.0, 1, 8]\nres = numbers[2] / numbers[0]  # 8 / 2.0 = 4.0\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]"
+    },
+    {
+      "id": 25,
+      "state": "[1.0, 8]",
+      "action": "[1.0, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 2.0 to get 1.0 [2.0 - 1 = 1.0] → [1.0, 8]",
+        "code": "numbers = [2.0, 1, 8]\nres = numbers[0] - numbers[1]  # 2.0 - 1 = 1.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.0, 8]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nSubtract 1 from 2.0 to get 1.0 [2.0 - 1 = 1.0] → [1.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] - numbers[1]  # 2.0 - 1 = 1.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.0, 8]"
+    },
+    {
+      "id": 26,
+      "state": "[0.5, 8]",
+      "action": "[0.5, 8]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 1 by 2.0 to get 0.5 [1 / 2.0 = 0.5] → [0.5, 8]",
+        "code": "numbers = [2.0, 1, 8]\nres = numbers[1] / numbers[0]  # 1 / 2.0 = 0.5\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.5, 8]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nDivide 1 by 2.0 to get 0.5 [1 / 2.0 = 0.5] → [0.5, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[1] / numbers[0]  # 1 / 2.0 = 0.5\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.5, 8]"
+    },
+    {
+      "id": 27,
+      "state": "[65, 4]",
+      "action": "[65, 4]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 64 and 1 to get 65 [64 + 1 = 65] → [65, 4]",
+        "code": "numbers = [64, 1, 4]\nres = numbers[0] + numbers[1]  # 64 + 1 = 65\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[65, 4]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nAdd 64 and 1 to get 65 [64 + 1 = 65] → [65, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] + numbers[1]  # 64 + 1 = 65\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [65, 4]"
+    },
+    {
+      "id": 28,
+      "state": "[63, 4]",
+      "action": "[63, 4]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 6,
+      "children_ids": [
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]",
+        "code": "numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[63, 4]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nSubtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 4]"
+    },
+    {
+      "id": 29,
+      "state": "[256, 1]",
+      "action": "[256, 1]",
+      "value": 60.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 6,
+      "children_ids": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 64 and 4 to get 256 [64 * 4 = 256] → [256, 1]",
+        "code": "numbers = [64, 1, 4]\nres = numbers[0] * numbers[2]  # 64 * 4 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[256, 1]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nMultiply 64 and 4 to get 256 [64 * 4 = 256] → [256, 1]\nCode: numbers = [64, 1, 4]\nres = numbers[0] * numbers[2]  # 64 * 4 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]"
+    },
+    {
+      "id": 30,
+      "state": "[16.0, 1]",
+      "action": "[16.0, 1]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 64 by 4 to get 16 [64 / 4 = 16] → [16, 1]",
+        "code": "numbers = [64, 1, 4]\nres = numbers[0] / numbers[2]  # 64 / 4 = 16\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[16.0, 1]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nDivide 64 by 4 to get 16 [64 / 4 = 16] → [16, 1]\nCode: numbers = [64, 1, 4]\nres = numbers[0] / numbers[2]  # 64 / 4 = 16\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [16.0, 1]"
+    },
+    {
+      "id": 31,
+      "state": "[4, 64]",
+      "action": "[4, 64]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 1 and 4 to get 4 [1 * 4 = 4] → [64, 4]",
+        "code": "numbers = [64, 1, 4]\nres = numbers[1] * numbers[2]  # 1 * 4 = 4\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4, 64]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nMultiply 1 and 4 to get 4 [1 * 4 = 4] → [64, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[1] * numbers[2]  # 1 * 4 = 4\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4, 64]"
+    },
+    {
+      "id": 32,
+      "state": "[255]",
+      "action": "[255]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 256 [256 - 1 = 255] → [255]",
+        "code": "numbers = [256, 1]\nres = numbers[0] - numbers[1]  # 256 - 1 = 255\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[255]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nMultiply 32 and 8 to get 256 [32 * 8 = 256] → [256, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] * numbers[2]  # 32 * 8 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nSubtract 1 from 256 [256 - 1 = 255] → [255]\nCode: numbers = [256, 1]\nres = numbers[0] - numbers[1]  # 256 - 1 = 255\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [255]"
+    },
+    {
+      "id": 33,
+      "state": "[256.0]",
+      "action": "[256.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 256 by 1 [256 / 1 = 256] → [256]",
+        "code": "numbers = [256, 1]\nres = numbers[0] / numbers[1]  # 256 / 1 = 256\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[256.0]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nMultiply 32 and 8 to get 256 [32 * 8 = 256] → [256, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] * numbers[2]  # 32 * 8 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nDivide 256 by 1 [256 / 1 = 256] → [256]\nCode: numbers = [256, 1]\nres = numbers[0] / numbers[1]  # 256 / 1 = 256\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256.0]"
+    },
+    {
+      "id": 34,
+      "state": "[0.00390625]",
+      "action": "[0.00390625]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 1 by 256 [1 / 256 = 0.00390625] → [0.00390625]",
+        "code": "numbers = [256, 1]\nres = numbers[1] / numbers[0]  # 1 / 256 = 0.00390625\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.00390625]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nMultiply 32 and 8 to get 256 [32 * 8 = 256] → [256, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] * numbers[2]  # 32 * 8 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nDivide 1 by 256 [1 / 256 = 0.00390625] → [0.00390625]\nCode: numbers = [256, 1]\nres = numbers[1] / numbers[0]  # 1 / 256 = 0.00390625\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.00390625]"
+    },
+    {
+      "id": 35,
+      "state": "[257]",
+      "action": "[257]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 256 and 1 [256 + 1 = 257] → [257]",
+        "code": "numbers = [256, 1]\nres = numbers[0] + numbers[1]  # 256 + 1 = 257\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[257]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nMultiply 32 and 8 to get 256 [32 * 8 = 256] → [256, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] * numbers[2]  # 32 * 8 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nAdd 256 and 1 [256 + 1 = 257] → [257]\nCode: numbers = [256, 1]\nres = numbers[0] + numbers[1]  # 256 + 1 = 257\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [257]"
+    },
+    {
+      "id": 36,
+      "state": "[11]",
+      "action": "[11]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 20,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 3 and 8 to get 11 [3 + 8 = 11] → [11]",
+        "code": "numbers = [3, 8]\nres = numbers[0] + numbers[1]  # 3 + 8 = 11\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[11]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nSubtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nAdd 3 and 8 to get 11 [3 + 8 = 11] → [11]\nCode: numbers = [3, 8]\nres = numbers[0] + numbers[1]  # 3 + 8 = 11\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11]"
+    },
+    {
+      "id": 37,
+      "state": "[5]",
+      "action": "[5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 20,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 3 from 8 to get 5 [8 - 3 = 5] → [5]",
+        "code": "numbers = [3, 8]\nres = numbers[1] - numbers[0]  # 8 - 3 = 5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[5]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nSubtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nSubtract 3 from 8 to get 5 [8 - 3 = 5] → [5]\nCode: numbers = [3, 8]\nres = numbers[1] - numbers[0]  # 8 - 3 = 5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5]"
+    },
+    {
+      "id": 38,
+      "state": "[24]",
+      "action": "[24]",
+      "value": 100.0,
+      "depth": 3,
+      "is_solution": true,
+      "is_pruned": false,
+      "parent_id": 20,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 3 and 8 to get 24 [3 * 8 = 24] → [24]",
+        "code": "numbers = [3, 8]\nres = numbers[0] * numbers[1]  # 3 * 8 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nSubtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nMultiply 3 and 8 to get 24 [3 * 8 = 24] → [24]\nCode: numbers = [3, 8]\nres = numbers[0] * numbers[1]  # 3 * 8 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24]"
+    },
+    {
+      "id": 39,
+      "state": "[2.6666666666666665]",
+      "action": "[2.6666666666666665]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 20,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 3 to get approximately 2.67 [8 / 3 = 2.67] → [2.67]",
+        "code": "numbers = [3, 8]\nres = numbers[1] / numbers[0]  # 8 / 3 = 2.67\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.6666666666666665]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nSubtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nDivide 8 by 3 to get approximately 2.67 [8 / 3 = 2.67] → [2.67]\nCode: numbers = [3, 8]\nres = numbers[1] / numbers[0]  # 8 / 3 = 2.67\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.6666666666666665]"
+    },
+    {
+      "id": 40,
+      "state": "[0.375]",
+      "action": "[0.375]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 20,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 3 by 8 to get 0.375 [3 / 8 = 0.375] → [0.375]",
+        "code": "numbers = [3, 8]\nres = numbers[0] / numbers[1]  # 3 / 8 = 0.375\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.375]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nSubtract 4 from 7 to get 3 [7 - 4 = 3] → [3, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] - numbers[1]  # 7 - 4 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nDivide 3 by 8 to get 0.375 [3 / 8 = 0.375] → [0.375]\nCode: numbers = [3, 8]\nres = numbers[0] / numbers[1]  # 3 / 8 = 0.375\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.375]"
+    },
+    {
+      "id": 41,
+      "state": "[255]",
+      "action": "[255]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 256 [256 - 1 = 255] → [255]",
+        "code": "numbers = [256, 1]\nres = numbers[0] - numbers[1]  # 256 - 1 = 255\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[255]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nMultiply 64 and 4 to get 256 [64 * 4 = 256] → [256, 1]\nCode: numbers = [64, 1, 4]\nres = numbers[0] * numbers[2]  # 64 * 4 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nSubtract 1 from 256 [256 - 1 = 255] → [255]\nCode: numbers = [256, 1]\nres = numbers[0] - numbers[1]  # 256 - 1 = 255\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [255]"
+    },
+    {
+      "id": 42,
+      "state": "[256.0]",
+      "action": "[256.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 256 by 1 [256 / 1 = 256] → [256]",
+        "code": "numbers = [256, 1]\nres = numbers[0] / numbers[1]  # 256 / 1 = 256\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[256.0]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nMultiply 64 and 4 to get 256 [64 * 4 = 256] → [256, 1]\nCode: numbers = [64, 1, 4]\nres = numbers[0] * numbers[2]  # 64 * 4 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nDivide 256 by 1 [256 / 1 = 256] → [256]\nCode: numbers = [256, 1]\nres = numbers[0] / numbers[1]  # 256 / 1 = 256\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256.0]"
+    },
+    {
+      "id": 43,
+      "state": "[257]",
+      "action": "[257]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 256 and 1 [256 + 1 = 257] → [257]",
+        "code": "numbers = [256, 1]\nres = numbers[0] + numbers[1]  # 256 + 1 = 257\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[257]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nMultiply 64 and 4 to get 256 [64 * 4 = 256] → [256, 1]\nCode: numbers = [64, 1, 4]\nres = numbers[0] * numbers[2]  # 64 * 4 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nAdd 256 and 1 [256 + 1 = 257] → [257]\nCode: numbers = [256, 1]\nres = numbers[0] + numbers[1]  # 256 + 1 = 257\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [257]"
+    },
+    {
+      "id": 44,
+      "state": "[0.00390625]",
+      "action": "[0.00390625]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 1 by 256 [1 / 256 = 0.00390625] → [0.00390625]",
+        "code": "numbers = [256, 1]\nres = numbers[1] / numbers[0]  # 1 / 256 = 0.00390625\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.00390625]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nMultiply 64 and 4 to get 256 [64 * 4 = 256] → [256, 1]\nCode: numbers = [64, 1, 4]\nres = numbers[0] * numbers[2]  # 64 * 4 = 256\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [256, 1]\nDivide 1 by 256 [1 / 256 = 0.00390625] → [0.00390625]\nCode: numbers = [256, 1]\nres = numbers[1] / numbers[0]  # 1 / 256 = 0.00390625\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.00390625]"
+    },
+    {
+      "id": 45,
+      "state": "[20]",
+      "action": "[20]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 18,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 8 from 28 to get 20 [28 - 8 = 20] → [20]",
+        "code": "numbers = [28, 8]\nres = numbers[0] - numbers[1]  # 28 - 8 = 20\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[20]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [28, 8]\nSubtract 8 from 28 to get 20 [28 - 8 = 20] → [20]\nCode: numbers = [28, 8]\nres = numbers[0] - numbers[1]  # 28 - 8 = 20\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20]"
+    },
+    {
+      "id": 46,
+      "state": "[224]",
+      "action": "[224]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 18,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 28 and 8 to get 224 [28 * 8 = 224] → [224]",
+        "code": "numbers = [28, 8]\nres = numbers[0] * numbers[1]  # 28 * 8 = 224\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[224]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [28, 8]\nMultiply 28 and 8 to get 224 [28 * 8 = 224] → [224]\nCode: numbers = [28, 8]\nres = numbers[0] * numbers[1]  # 28 * 8 = 224\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [224]"
+    },
+    {
+      "id": 47,
+      "state": "[3.5]",
+      "action": "[3.5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 18,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 28 by 8 to get 3.5 [28 / 8 = 3.5] → [3.5]",
+        "code": "numbers = [28, 8]\nres = numbers[0] / numbers[1]  # 28 / 8 = 3.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.5]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [28, 8]\nDivide 28 by 8 to get 3.5 [28 / 8 = 3.5] → [3.5]\nCode: numbers = [28, 8]\nres = numbers[0] / numbers[1]  # 28 / 8 = 3.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.5]"
+    },
+    {
+      "id": 48,
+      "state": "[0.2857142857142857]",
+      "action": "[0.2857142857142857]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 18,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 28 to get approximately 0.2857 [8 / 28 = 0.2857] → [0.2857]",
+        "code": "numbers = [28, 8]\nres = numbers[1] / numbers[0]  # 8 / 28 = 0.2857\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.2857142857142857]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [28, 8]\nDivide 8 by 28 to get approximately 0.2857 [8 / 28 = 0.2857] → [0.2857]\nCode: numbers = [28, 8]\nres = numbers[1] / numbers[0]  # 8 / 28 = 0.2857\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.2857142857142857]"
+    },
+    {
+      "id": 49,
+      "state": "[36]",
+      "action": "[36]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 18,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 28 and 8 to get 36 [28 + 8 = 36] → [36]",
+        "code": "numbers = [28, 8]\nres = numbers[0] + numbers[1]  # 28 + 8 = 36\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[36]"
+      },
+      "path_history": "Subtract 1 from 8 to get 7 [8 - 1 = 7] → [7, 4, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] - numbers[0]  # 8 - 1 = 7\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 4, 8]\nMultiply 7 and 4 to get 28 [7 * 4 = 28] → [28, 8]\nCode: numbers = [7, 4, 8]\nres = numbers[0] * numbers[1]  # 7 * 4 = 28\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [28, 8]\nAdd 28 and 8 to get 36 [28 + 8 = 36] → [36]\nCode: numbers = [28, 8]\nres = numbers[0] + numbers[1]  # 28 + 8 = 36\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [36]"
+    },
+    {
+      "id": 50,
+      "state": "[5.0]",
+      "action": "[5.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 4.0 and 1 to get 5.0 [4.0 + 1 = 5.0] → [5.0]",
+        "code": "numbers = [4.0, 1]\nres = numbers[0] + numbers[1]  # 4.0 + 1 = 5.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[5.0]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]\nAdd 4.0 and 1 to get 5.0 [4.0 + 1 = 5.0] → [5.0]\nCode: numbers = [4.0, 1]\nres = numbers[0] + numbers[1]  # 4.0 + 1 = 5.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [5.0]"
+    },
+    {
+      "id": 51,
+      "state": "[3.0]",
+      "action": "[3.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1 from 4.0 to get 3.0 [4.0 - 1 = 3.0] → [3.0]",
+        "code": "numbers = [4.0, 1]\nres = numbers[0] - numbers[1]  # 4.0 - 1 = 3.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[3.0]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]\nSubtract 1 from 4.0 to get 3.0 [4.0 - 1 = 3.0] → [3.0]\nCode: numbers = [4.0, 1]\nres = numbers[0] - numbers[1]  # 4.0 - 1 = 3.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [3.0]"
+    },
+    {
+      "id": 52,
+      "state": "[4.0]",
+      "action": "[4.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 4.0 and 1 to get 4.0 [4.0 * 1 = 4.0] → [4.0]",
+        "code": "numbers = [4.0, 1]\nres = numbers[0] * numbers[1]  # 4.0 * 1 = 4.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[4.0]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]\nMultiply 4.0 and 1 to get 4.0 [4.0 * 1 = 4.0] → [4.0]\nCode: numbers = [4.0, 1]\nres = numbers[0] * numbers[1]  # 4.0 * 1 = 4.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [4.0]"
+    },
+    {
+      "id": 53,
+      "state": "[0.25]",
+      "action": "[0.25]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 1 by 4.0 to get 0.25 [1 / 4.0 = 0.25] → [0.25]",
+        "code": "numbers = [4.0, 1]\nres = numbers[1] / numbers[0]  # 1 / 4.0 = 0.25\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[0.25]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]\nDivide 1 by 4.0 to get 0.25 [1 / 4.0 = 0.25] → [0.25]\nCode: numbers = [4.0, 1]\nres = numbers[1] / numbers[0]  # 1 / 4.0 = 0.25\nnew_numbers = [res]\nprint(new_numbers)\nResult: [0.25]"
+    },
+    {
+      "id": 54,
+      "state": "[-3.0]",
+      "action": "[-3.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4.0 from 1 to get -3.0 [1 - 4.0 = -3.0] → [-3.0]",
+        "code": "numbers = [4.0, 1]\nres = numbers[1] - numbers[0]  # 1 - 4.0 = -3.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[-3.0]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nDivide 32 by 8 to get 4 [32 / 8 = 4] → [4, 1]\nCode: numbers = [32, 1, 8]\nres = numbers[0] / numbers[2]  # 32 / 8 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 1]\nSubtract 4.0 from 1 to get -3.0 [1 - 4.0 = -3.0] → [-3.0]\nCode: numbers = [4.0, 1]\nres = numbers[1] - numbers[0]  # 1 - 4.0 = -3.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [-3.0]"
+    },
+    {
+      "id": 55,
+      "state": "[10.0]",
+      "action": "[10.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 23,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 2.0 and 8 [2.0 + 8 = 10.0] → [10.0]",
+        "code": "numbers = [2.0, 8]\nres = numbers[0] + numbers[1]  # 2.0 + 8 = 10.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[10.0]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nMultiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 8]\nAdd 2.0 and 8 [2.0 + 8 = 10.0] → [10.0]\nCode: numbers = [2.0, 8]\nres = numbers[0] + numbers[1]  # 2.0 + 8 = 10.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [10.0]"
+    },
+    {
+      "id": 56,
+      "state": "[6.0]",
+      "action": "[6.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 23,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 2.0 from 8 [8 - 2.0 = 6.0] → [6.0]",
+        "code": "numbers = [2.0, 8]\nres = numbers[1] - numbers[0]  # 8 - 2.0 = 6.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[6.0]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nMultiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 8]\nSubtract 2.0 from 8 [8 - 2.0 = 6.0] → [6.0]\nCode: numbers = [2.0, 8]\nres = numbers[1] - numbers[0]  # 8 - 2.0 = 6.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [6.0]"
+    },
+    {
+      "id": 57,
+      "state": "[16.0]",
+      "action": "[16.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 23,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 2.0 and 8 [2.0 * 8 = 16.0] → [16.0]",
+        "code": "numbers = [2.0, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 8 = 16.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[16.0]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nMultiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 8]\nMultiply 2.0 and 8 [2.0 * 8 = 16.0] → [16.0]\nCode: numbers = [2.0, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 8 = 16.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [16.0]"
+    },
+    {
+      "id": 58,
+      "state": "[4.0]",
+      "action": "[4.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 23,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 2.0 [8 / 2.0 = 4.0] → [4.0]",
+        "code": "numbers = [2.0, 8]\nres = numbers[1] / numbers[0]  # 8 / 2.0 = 4.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[4.0]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nMultiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 8]\nDivide 8 by 2.0 [8 / 2.0 = 4.0] → [4.0]\nCode: numbers = [2.0, 8]\nres = numbers[1] / numbers[0]  # 8 / 2.0 = 4.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [4.0]"
+    },
+    {
+      "id": 59,
+      "state": "[0.25]",
+      "action": "[0.25]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 23,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 2.0 by 8 [2.0 / 8 = 0.25] → [0.25]",
+        "code": "numbers = [2.0, 8]\nres = numbers[0] / numbers[1]  # 2.0 / 8 = 0.25\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[0.25]"
+      },
+      "path_history": "Divide 8 by 4 to get 2 [8 / 4 = 2] → [1, 2, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] / numbers[1]  # 8 / 4 = 2\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 1, 8]\nMultiply 2.0 and 1 to get 2.0 [2.0 * 1 = 2.0] → [2.0, 8]\nCode: numbers = [2.0, 1, 8]\nres = numbers[0] * numbers[1]  # 2.0 * 1 = 2.0\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 8]\nDivide 2.0 by 8 [2.0 / 8 = 0.25] → [0.25]\nCode: numbers = [2.0, 8]\nres = numbers[0] / numbers[1]  # 2.0 / 8 = 0.25\nnew_numbers = [res]\nprint(new_numbers)\nResult: [0.25]"
+    },
+    {
+      "id": 60,
+      "state": "[59]",
+      "action": "[59]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 28,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4 from 63 to get 59 [63 - 4 = 59] → [59]",
+        "code": "numbers = [63, 4]\nres = numbers[0] - numbers[1]  # 63 - 4 = 59\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[59]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nSubtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 4]\nSubtract 4 from 63 to get 59 [63 - 4 = 59] → [59]\nCode: numbers = [63, 4]\nres = numbers[0] - numbers[1]  # 63 - 4 = 59\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [59]"
+    },
+    {
+      "id": 61,
+      "state": "[252]",
+      "action": "[252]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 28,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 63 and 4 to get 252 [63 * 4 = 252] → [252]",
+        "code": "numbers = [63, 4]\nres = numbers[0] * numbers[1]  # 63 * 4 = 252\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[252]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nSubtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 4]\nMultiply 63 and 4 to get 252 [63 * 4 = 252] → [252]\nCode: numbers = [63, 4]\nres = numbers[0] * numbers[1]  # 63 * 4 = 252\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [252]"
+    },
+    {
+      "id": 62,
+      "state": "[15.75]",
+      "action": "[15.75]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 28,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 63 by 4 to get 15.75 [63 / 4 = 15.75] → [15.75]",
+        "code": "numbers = [63, 4]\nres = numbers[0] / numbers[1]  # 63 / 4 = 15.75\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15.75]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nSubtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 4]\nDivide 63 by 4 to get 15.75 [63 / 4 = 15.75] → [15.75]\nCode: numbers = [63, 4]\nres = numbers[0] / numbers[1]  # 63 / 4 = 15.75\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.75]"
+    },
+    {
+      "id": 63,
+      "state": "[0.06349206349206349]",
+      "action": "[0.06349206349206349]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 28,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 4 by 63 to get approximately 0.0635 [4 / 63 = 0.06349206349] → [0.06349206349]",
+        "code": "numbers = [63, 4]\nres = numbers[1] / numbers[0]  # 4 / 63 = 0.06349206349\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.06349206349206349]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nSubtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 4]\nDivide 4 by 63 to get approximately 0.0635 [4 / 63 = 0.06349206349] → [0.06349206349]\nCode: numbers = [63, 4]\nres = numbers[1] / numbers[0]  # 4 / 63 = 0.06349206349\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.06349206349206349]"
+    },
+    {
+      "id": 64,
+      "state": "[67]",
+      "action": "[67]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 28,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 63 and 4 to get 67 [63 + 4 = 67] → [67]",
+        "code": "numbers = [63, 4]\nres = numbers[0] + numbers[1]  # 63 + 4 = 67\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[67]"
+      },
+      "path_history": "Multiply 8 and 8 to get 64 [8 * 8 = 64] → [1, 4, 64]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[2] * numbers[3]  # 8 * 8 = 64\nremaining = [numbers[0], numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [64, 1, 4]\nSubtract 1 from 64 to get 63 [64 - 1 = 63] → [63, 4]\nCode: numbers = [64, 1, 4]\nres = numbers[0] - numbers[1]  # 64 - 1 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 4]\nAdd 63 and 4 to get 67 [63 + 4 = 67] → [67]\nCode: numbers = [63, 4]\nres = numbers[0] + numbers[1]  # 63 + 4 = 67\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [67]"
+    },
+    {
+      "id": 65,
+      "state": "[25]",
+      "action": "[25]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 8 from 33 [33 - 8 = 25] → [25]",
+        "code": "numbers = [33, 8]\nres = numbers[0] - numbers[1]  # 33 - 8 = 25\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[25]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nAdd 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [33, 8]\nSubtract 8 from 33 [33 - 8 = 25] → [25]\nCode: numbers = [33, 8]\nres = numbers[0] - numbers[1]  # 33 - 8 = 25\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [25]"
+    },
+    {
+      "id": 66,
+      "state": "[41]",
+      "action": "[41]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 33 and 8 [33 + 8 = 41] → [41]",
+        "code": "numbers = [33, 8]\nres = numbers[0] + numbers[1]  # 33 + 8 = 41\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[41]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nAdd 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [33, 8]\nAdd 33 and 8 [33 + 8 = 41] → [41]\nCode: numbers = [33, 8]\nres = numbers[0] + numbers[1]  # 33 + 8 = 41\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [41]"
+    },
+    {
+      "id": 67,
+      "state": "[264]",
+      "action": "[264]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 33 and 8 [33 * 8 = 264] → [264]",
+        "code": "numbers = [33, 8]\nres = numbers[0] * numbers[1]  # 33 * 8 = 264\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[264]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nAdd 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [33, 8]\nMultiply 33 and 8 [33 * 8 = 264] → [264]\nCode: numbers = [33, 8]\nres = numbers[0] * numbers[1]  # 33 * 8 = 264\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [264]"
+    },
+    {
+      "id": 68,
+      "state": "[4.125]",
+      "action": "[4.125]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 33 by 8 [33 / 8 = 4.125] → [4.125]",
+        "code": "numbers = [33, 8]\nres = numbers[0] / numbers[1]  # 33 / 8 = 4.125\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4.125]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nAdd 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [33, 8]\nDivide 33 by 8 [33 / 8 = 4.125] → [4.125]\nCode: numbers = [33, 8]\nres = numbers[0] / numbers[1]  # 33 / 8 = 4.125\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.125]"
+    },
+    {
+      "id": 69,
+      "state": "[0.24242424242424243]",
+      "action": "[0.24242424242424243]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 33 [8 / 33 = 0.242424...] → [0.242424...]",
+        "code": "numbers = [33, 8]\nres = numbers[1] / numbers[0]  # 8 / 33 = 0.242424...\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.24242424242424243]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nAdd 32 and 1 to get 33 [32 + 1 = 33] → [33, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] + numbers[1]  # 32 + 1 = 33\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [33, 8]\nDivide 8 by 33 [8 / 33 = 0.242424...] → [0.242424...]\nCode: numbers = [33, 8]\nres = numbers[1] / numbers[0]  # 8 / 33 = 0.242424...\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.24242424242424243]"
+    },
+    {
+      "id": 70,
+      "state": "[11]",
+      "action": "[11]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 3 and 8 to get 11 [3 + 8 = 11] → [11]",
+        "code": "numbers = [3, 8]\nres = numbers[0] + numbers[1]  # 3 + 8 = 11\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[11]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nAdd 3 and 8 to get 11 [3 + 8 = 11] → [11]\nCode: numbers = [3, 8]\nres = numbers[0] + numbers[1]  # 3 + 8 = 11\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11]"
+    },
+    {
+      "id": 71,
+      "state": "[5]",
+      "action": "[5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 3 from 8 to get 5 [8 - 3 = 5] → [5]",
+        "code": "numbers = [3, 8]\nres = numbers[1] - numbers[0]  # 8 - 3 = 5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[5]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nSubtract 3 from 8 to get 5 [8 - 3 = 5] → [5]\nCode: numbers = [3, 8]\nres = numbers[1] - numbers[0]  # 8 - 3 = 5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5]"
+    },
+    {
+      "id": 72,
+      "state": "[24]",
+      "action": "[24]",
+      "value": 100.0,
+      "depth": 3,
+      "is_solution": true,
+      "is_pruned": false,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 3 and 8 to get 24 [3 * 8 = 24] → [24]",
+        "code": "numbers = [3, 8]\nres = numbers[0] * numbers[1]  # 3 * 8 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nMultiply 3 and 8 to get 24 [3 * 8 = 24] → [24]\nCode: numbers = [3, 8]\nres = numbers[0] * numbers[1]  # 3 * 8 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24]"
+    },
+    {
+      "id": 73,
+      "state": "[2.6666666666666665]",
+      "action": "[2.6666666666666665]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 3 to get approximately 2.67 [8 / 3 = 2.67] → [2.67]",
+        "code": "numbers = [3, 8]\nres = numbers[1] / numbers[0]  # 8 / 3 = 2.67\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.6666666666666665]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nDivide 8 by 3 to get approximately 2.67 [8 / 3 = 2.67] → [2.67]\nCode: numbers = [3, 8]\nres = numbers[1] / numbers[0]  # 8 / 3 = 2.67\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.6666666666666665]"
+    },
+    {
+      "id": 74,
+      "state": "[0.375]",
+      "action": "[0.375]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 3 by 8 to get 0.375 [3 / 8 = 0.375] → [0.375]",
+        "code": "numbers = [3, 8]\nres = numbers[0] / numbers[1]  # 3 / 8 = 0.375\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.375]"
+      },
+      "path_history": "Add 1 and 4 to get 5 [1 + 4 = 5] → [5, 8, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[0] + numbers[1]  # 1 + 4 = 5\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 8, 8]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → [3, 8]\nCode: numbers = [5, 8, 8]\nres = numbers[1] - numbers[0]  # 8 - 5 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 8]\nDivide 3 by 8 to get 0.375 [3 / 8 = 0.375] → [0.375]\nCode: numbers = [3, 8]\nres = numbers[0] / numbers[1]  # 3 / 8 = 0.375\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.375]"
+    },
+    {
+      "id": 75,
+      "state": "[23]",
+      "action": "[23]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 8 from 31 to get 23 [31 - 8 = 23] → [23]",
+        "code": "numbers = [31, 8]\nres = numbers[0] - numbers[1]  # 31 - 8 = 23\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[23]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nSubtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [31, 8]\nSubtract 8 from 31 to get 23 [31 - 8 = 23] → [23]\nCode: numbers = [31, 8]\nres = numbers[0] - numbers[1]  # 31 - 8 = 23\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [23]"
+    },
+    {
+      "id": 76,
+      "state": "[248]",
+      "action": "[248]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 31 and 8 to get 248 [31 * 8 = 248] → []",
+        "code": "numbers = [31, 8]\nres = numbers[0] * numbers[1]  # 31 * 8 = 248\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[248]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nSubtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [31, 8]\nMultiply 31 and 8 to get 248 [31 * 8 = 248] → []\nCode: numbers = [31, 8]\nres = numbers[0] * numbers[1]  # 31 * 8 = 248\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [248]"
+    },
+    {
+      "id": 77,
+      "state": "[3.875]",
+      "action": "[3.875]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 31 by 8 to get 3.875 [31 / 8 = 3.875] → []",
+        "code": "numbers = [31, 8]\nres = numbers[0] / numbers[1]  # 31 / 8 = 3.875\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.875]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nSubtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [31, 8]\nDivide 31 by 8 to get 3.875 [31 / 8 = 3.875] → []\nCode: numbers = [31, 8]\nres = numbers[0] / numbers[1]  # 31 / 8 = 3.875\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.875]"
+    },
+    {
+      "id": 78,
+      "state": "[0.25806451612903225]",
+      "action": "[0.25806451612903225]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 31 to get approximately 0.258 [8 / 31 = 0.258] → []",
+        "code": "numbers = [31, 8]\nres = numbers[1] / numbers[0]  # 8 / 31 = 0.258\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.25806451612903225]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nSubtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [31, 8]\nDivide 8 by 31 to get approximately 0.258 [8 / 31 = 0.258] → []\nCode: numbers = [31, 8]\nres = numbers[1] / numbers[0]  # 8 / 31 = 0.258\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.25806451612903225]"
+    },
+    {
+      "id": 79,
+      "state": "[39]",
+      "action": "[39]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 31 and 8 to get 39 [31 + 8 = 39] → []",
+        "code": "numbers = [31, 8]\nres = numbers[0] + numbers[1]  # 31 + 8 = 39\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[39]"
+      },
+      "path_history": "Multiply 4 and 8 to get 32 [4 * 8 = 32] → [1, 32, 8]\nCode: numbers = [1, 4, 8, 8]\nres = numbers[1] * numbers[2]  # 4 * 8 = 32\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [32, 1, 8]\nSubtract 1 from 32 to get 31 [32 - 1 = 31] → [31, 8]\nCode: numbers = [32, 1, 8]\nres = numbers[0] - numbers[1]  # 32 - 1 = 31\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [31, 8]\nAdd 31 and 8 to get 39 [31 + 8 = 39] → []\nCode: numbers = [31, 8]\nres = numbers[0] + numbers[1]  # 31 + 8 = 39\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [39]"
+    }
+  ],
+  "solutions": [
+    38,
+    72
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:20.729266",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 2.16
+  },
+  "problem": {
+    "numbers": [
+      3,
+      4,
+      6,
+      11
+    ],
+    "input_string": "3 4 6 11"
+  },
+  "solution": {
+    "steps": [
+      "11 - 6 = 5 (left: 3 4 5)",
+      "5 + 4 = 9 (left: 3 9)",
+      "3 * 9 = 27 (left: 27)"
+    ],
+    "final_result": "27",
+    "expression": "3 * (4 + (11 - 6))",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "11 - 6 = 5 (left: 3 4 5)\n5 + 4 = 9 (left: 3 9)\n3 * 9 = 27 (left: 27)\nAnswer: 3 * (4 + (11 - 6))"
+  }
+}

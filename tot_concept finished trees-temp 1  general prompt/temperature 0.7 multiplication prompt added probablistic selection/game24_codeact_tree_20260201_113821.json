@@ -1,0 +1,1582 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-01T11:38:21.635153",
+    "mode": "CodeAct",
+    "parameters": {
+      "temperature": 0.7,
+      "n_evaluate_sample": 3,
+      "n_select_sample": 10,
+      "max_steps": 4,
+      "api_delay": 3.5
+    },
+    "statistics": {
+      "total_nodes": 81,
+      "api_calls": 103,
+      "cache_hits": 0,
+      "solutions_found": 1,
+      "code_executions": 80,
+      "code_errors": 0,
+      "daily_requests": 103,
+      "session_start": "2026-02-01T11:23:19.316194"
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "state": "",
+      "action": "START",
+      "value": 0.0,
+      "depth": 0,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": null,
+      "children_ids": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Initial state",
+        "code": "",
+        "observation": "Starting numbers: [6, 9, 9, 10]"
+      },
+      "path_history": ""
+    },
+    {
+      "id": 2,
+      "state": "[15, 9, 10]",
+      "action": "[15, 9, 10]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]",
+        "code": "numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15, 9, 10]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]"
+    },
+    {
+      "id": 3,
+      "state": "[54, 9, 10]",
+      "action": "[54, 9, 10]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]",
+        "code": "numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[54, 9, 10]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]"
+    },
+    {
+      "id": 4,
+      "state": "[3, 9, 10]",
+      "action": "[3, 9, 10]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]",
+        "code": "numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3, 9, 10]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]"
+    },
+    {
+      "id": 5,
+      "state": "[1.1111111111111112, 6, 9]",
+      "action": "[1.1111111111111112, 6, 9]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]",
+        "code": "numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.1111111111111112, 6, 9]"
+      },
+      "path_history": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.1111111111111112, 6, 9]"
+    },
+    {
+      "id": 6,
+      "state": "[90, 6, 9]",
+      "action": "[90, 6, 9]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]",
+        "code": "numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[90, 6, 9]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]"
+    },
+    {
+      "id": 7,
+      "state": "[24, 10]",
+      "action": "[24, 10]",
+      "value": 0.01,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 15 and 9 to get 24 [15 + 9 = 24] → [10, 24]",
+        "code": "numbers = [15, 9, 10]\nres = numbers[0] + numbers[1]  # 15 + 9 = 24\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24, 10]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nAdd 15 and 9 to get 24 [15 + 9 = 24] → [10, 24]\nCode: numbers = [15, 9, 10]\nres = numbers[0] + numbers[1]  # 15 + 9 = 24\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24, 10]"
+    },
+    {
+      "id": 8,
+      "state": "[6, 10]",
+      "action": "[6, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]",
+        "code": "numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[6, 10]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nSubtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]\nCode: numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6, 10]"
+    },
+    {
+      "id": 9,
+      "state": "[135, 10]",
+      "action": "[135, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]",
+        "code": "numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[135, 10]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nMultiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]\nCode: numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135, 10]"
+    },
+    {
+      "id": 10,
+      "state": "[1.6666666666666667, 10]",
+      "action": "[1.6666666666666667, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 15 by 9 to get 1.666... (not ideal, but valid) [15 / 9 = 1.666...] → [10, 1.666...]",
+        "code": "numbers = [15, 9, 10]\nres = numbers[0] / numbers[1]  # 15 / 9 = 1.666...\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.6666666666666667, 10]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nDivide 15 by 9 to get 1.666... (not ideal, but valid) [15 / 9 = 1.666...] → [10, 1.666...]\nCode: numbers = [15, 9, 10]\nres = numbers[0] / numbers[1]  # 15 / 9 = 1.666...\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.6666666666666667, 10]"
+    },
+    {
+      "id": 11,
+      "state": "[19, 15]",
+      "action": "[19, 15]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 2,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 9 and 10 to get 19 [9 + 10 = 19] → [15, 19]",
+        "code": "numbers = [15, 9, 10]\nres = numbers[1] + numbers[2]  # 9 + 10 = 19\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[19, 15]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nAdd 9 and 10 to get 19 [9 + 10 = 19] → [15, 19]\nCode: numbers = [15, 9, 10]\nres = numbers[1] + numbers[2]  # 9 + 10 = 19\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [19, 15]"
+    },
+    {
+      "id": 12,
+      "state": "[486, 10]",
+      "action": "[486, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 3,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 54 and 9 to get 486 [54 * 9 = 486] → [10, 486]",
+        "code": "numbers = [54, 9, 10]\nres = numbers[0] * numbers[1]  # 54 * 9 = 486\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[486, 10]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 54 and 9 to get 486 [54 * 9 = 486] → [10, 486]\nCode: numbers = [54, 9, 10]\nres = numbers[0] * numbers[1]  # 54 * 9 = 486\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [486, 10]"
+    },
+    {
+      "id": 13,
+      "state": "[6.0, 10]",
+      "action": "[6.0, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]",
+        "code": "numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[6.0, 10]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nDivide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]\nCode: numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0, 10]"
+    },
+    {
+      "id": 14,
+      "state": "[63, 10]",
+      "action": "[63, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]",
+        "code": "numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[63, 10]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nAdd 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]\nCode: numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 10]"
+    },
+    {
+      "id": 15,
+      "state": "[45, 10]",
+      "action": "[45, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]",
+        "code": "numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[45, 10]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nSubtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]\nCode: numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [45, 10]"
+    },
+    {
+      "id": 16,
+      "state": "[90, 54]",
+      "action": "[90, 54]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]",
+        "code": "numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[90, 54]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]\nCode: numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 54]"
+    },
+    {
+      "id": 17,
+      "state": "[12, 10]",
+      "action": "[12, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 4,
+      "children_ids": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]",
+        "code": "numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[12, 10]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nAdd 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]\nCode: numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 10]"
+    },
+    {
+      "id": 18,
+      "state": "[27, 10]",
+      "action": "[27, 10]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 3 and 9 to get 27 [3 * 9 = 27] → [10, 27]",
+        "code": "numbers = [3, 9, 10]\nres = numbers[0] * numbers[1]  # 3 * 9 = 27\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[27, 10]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nMultiply 3 and 9 to get 27 [3 * 9 = 27] → [10, 27]\nCode: numbers = [3, 9, 10]\nres = numbers[0] * numbers[1]  # 3 * 9 = 27\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [27, 10]"
+    },
+    {
+      "id": 19,
+      "state": "[3.0, 10]",
+      "action": "[3.0, 10]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 9 by 3 to get 3 [9 / 3 = 3] → [10, 3]",
+        "code": "numbers = [3, 9, 10]\nres = numbers[1] / numbers[0]  # 9 / 3 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.0, 10]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nDivide 9 by 3 to get 3 [9 / 3 = 3] → [10, 3]\nCode: numbers = [3, 9, 10]\nres = numbers[1] / numbers[0]  # 9 / 3 = 3\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.0, 10]"
+    },
+    {
+      "id": 20,
+      "state": "[7, 9]",
+      "action": "[7, 9]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 3 from 10 to get 7 [10 - 3 = 7] → [9, 7]",
+        "code": "numbers = [3, 9, 10]\nres = numbers[2] - numbers[0]  # 10 - 3 = 7\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[7, 9]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nSubtract 3 from 10 to get 7 [10 - 3 = 7] → [9, 7]\nCode: numbers = [3, 9, 10]\nres = numbers[2] - numbers[0]  # 10 - 3 = 7\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7, 9]"
+    },
+    {
+      "id": 21,
+      "state": "[30, 9]",
+      "action": "[30, 9]",
+      "value": 3.5999999999999996,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 3 and 10 to get 30 [3 * 10 = 30] → [9, 30]",
+        "code": "numbers = [3, 9, 10]\nres = numbers[0] * numbers[2]  # 3 * 10 = 30\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[30, 9]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nMultiply 3 and 10 to get 30 [3 * 10 = 30] → [9, 30]\nCode: numbers = [3, 9, 10]\nres = numbers[0] * numbers[2]  # 3 * 10 = 30\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 9]"
+    },
+    {
+      "id": 22,
+      "state": "[7.111111111111111, 9]",
+      "action": "[7.111111111111111, 9]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 6 and 9 to get 15 [6 + 9 = 15] → [1.1111111111111112, 15]",
+        "code": "numbers = [1.1111111111111112, 6, 9]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[7.111111111111111, 9]"
+      },
+      "path_history": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.1111111111111112, 6, 9]\nAdd 6 and 9 to get 15 [6 + 9 = 15] → [1.1111111111111112, 15]\nCode: numbers = [1.1111111111111112, 6, 9]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7.111111111111111, 9]"
+    },
+    {
+      "id": 23,
+      "state": "[6.666666666666667, 9]",
+      "action": "[6.666666666666667, 9]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 1.1111111111111112 and 6 to get approximately 6.666666666666667 [1.1111111111111112 * 6 = 6.666666666666667] → [6.666666666666667, 9]",
+        "code": "numbers = [1.1111111111111112, 6, 9]\nres = numbers[0] * numbers[1]  # 1.1111111111111112 * 6 = 6.666666666666667\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[6.666666666666667, 9]"
+      },
+      "path_history": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.1111111111111112, 6, 9]\nMultiply 1.1111111111111112 and 6 to get approximately 6.666666666666667 [1.1111111111111112 * 6 = 6.666666666666667] → [6.666666666666667, 9]\nCode: numbers = [1.1111111111111112, 6, 9]\nres = numbers[0] * numbers[1]  # 1.1111111111111112 * 6 = 6.666666666666667\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.666666666666667, 9]"
+    },
+    {
+      "id": 24,
+      "state": "[8.1, 6]",
+      "action": "[8.1, 6]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 9 by 1.1111111111111112 to get approximately 8.1 [9 / 1.1111111111111112 = 8.1] → [8.1, 6]",
+        "code": "numbers = [1.1111111111111112, 6, 9]\nres = numbers[2] / numbers[0]  # 9 / 1.1111111111111112 = 8.1\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[8.1, 6]"
+      },
+      "path_history": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.1111111111111112, 6, 9]\nDivide 9 by 1.1111111111111112 to get approximately 8.1 [9 / 1.1111111111111112 = 8.1] → [8.1, 6]\nCode: numbers = [1.1111111111111112, 6, 9]\nres = numbers[2] / numbers[0]  # 9 / 1.1111111111111112 = 8.1\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8.1, 6]"
+    },
+    {
+      "id": 25,
+      "state": "[7.888888888888889, 6]",
+      "action": "[7.888888888888889, 6]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1.1111111111111112 from 9 to get approximately 7.888888888888889 [9 - 1.1111111111111112 = 7.888888888888889] → [7.888888888888889, 6]",
+        "code": "numbers = [1.1111111111111112, 6, 9]\nres = numbers[2] - numbers[0]  # 9 - 1.1111111111111112 = 7.888888888888889\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[7.888888888888889, 6]"
+      },
+      "path_history": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.1111111111111112, 6, 9]\nSubtract 1.1111111111111112 from 9 to get approximately 7.888888888888889 [9 - 1.1111111111111112 = 7.888888888888889] → [7.888888888888889, 6]\nCode: numbers = [1.1111111111111112, 6, 9]\nres = numbers[2] - numbers[0]  # 9 - 1.1111111111111112 = 7.888888888888889\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7.888888888888889, 6]"
+    },
+    {
+      "id": 26,
+      "state": "[54, 1.1111111111111112]",
+      "action": "[54, 1.1111111111111112]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 9 and 6 to get 54 [9 * 6 = 54] → [1.1111111111111112, 54]",
+        "code": "numbers = [1.1111111111111112, 6, 9]\nres = numbers[1] * numbers[2]  # 6 * 9 = 54\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[54, 1.1111111111111112]"
+      },
+      "path_history": "Divide 10 by 9 to get approximately 1.11 [10 / 9 = 1.11] → [6, 9, 1.11]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[3] / numbers[1]  # 10 / 9 = 1.11\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.1111111111111112, 6, 9]\nMultiply 9 and 6 to get 54 [9 * 6 = 54] → [1.1111111111111112, 54]\nCode: numbers = [1.1111111111111112, 6, 9]\nres = numbers[1] * numbers[2]  # 6 * 9 = 54\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 1.1111111111111112]"
+    },
+    {
+      "id": 27,
+      "state": "[96, 9]",
+      "action": "[96, 9]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 6,
+      "children_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]",
+        "code": "numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[96, 9]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nAdd 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [96, 9]"
+    },
+    {
+      "id": 28,
+      "state": "[84, 9]",
+      "action": "[84, 9]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 90 to get 84 [90 - 6 = 84] → [84, 9]",
+        "code": "numbers = [90, 6, 9]\nres = numbers[0] - numbers[1]  # 90 - 6 = 84\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[84, 9]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nSubtract 6 from 90 to get 84 [90 - 6 = 84] → [84, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] - numbers[1]  # 90 - 6 = 84\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [84, 9]"
+    },
+    {
+      "id": 29,
+      "state": "[810, 6]",
+      "action": "[810, 6]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 6,
+      "children_ids": [
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]",
+        "code": "numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[810, 6]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]\nCode: numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [810, 6]"
+    },
+    {
+      "id": 30,
+      "state": "[15.0, 9]",
+      "action": "[15.0, 9]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 6,
+      "children_ids": [
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]",
+        "code": "numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15.0, 9]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nDivide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.0, 9]"
+    },
+    {
+      "id": 31,
+      "state": "[54, 90]",
+      "action": "[54, 90]",
+      "value": 3.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [90, 54]",
+        "code": "numbers = [90, 6, 9]\nres = numbers[1] * numbers[2]  # 6 * 9 = 54\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[54, 90]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 6 and 9 to get 54 [6 * 9 = 54] → [90, 54]\nCode: numbers = [90, 6, 9]\nres = numbers[1] * numbers[2]  # 6 * 9 = 54\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 90]"
+    },
+    {
+      "id": 32,
+      "state": "[87]",
+      "action": "[87]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 27,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 9 from 96 to get 87 [96 - 9 = 87] → [87]",
+        "code": "numbers = [96, 9]\nres = numbers[0] - numbers[1]  # 96 - 9 = 87\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[87]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nAdd 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [96, 9]\nSubtract 9 from 96 to get 87 [96 - 9 = 87] → [87]\nCode: numbers = [96, 9]\nres = numbers[0] - numbers[1]  # 96 - 9 = 87\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [87]"
+    },
+    {
+      "id": 33,
+      "state": "[864]",
+      "action": "[864]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 27,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 96 and 9 to get 864 [96 * 9 = 864] → []",
+        "code": "numbers = [96, 9]\nres = numbers[0] * numbers[1]  # 96 * 9 = 864\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[864]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nAdd 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [96, 9]\nMultiply 96 and 9 to get 864 [96 * 9 = 864] → []\nCode: numbers = [96, 9]\nres = numbers[0] * numbers[1]  # 96 * 9 = 864\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [864]"
+    },
+    {
+      "id": 34,
+      "state": "[10.666666666666666]",
+      "action": "[10.666666666666666]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 27,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 96 by 9 to get approximately 10.67 [96 / 9 = 10.666...] → []",
+        "code": "numbers = [96, 9]\nres = numbers[0] / numbers[1]  # 96 / 9 = 10.666...\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[10.666666666666666]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nAdd 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [96, 9]\nDivide 96 by 9 to get approximately 10.67 [96 / 9 = 10.666...] → []\nCode: numbers = [96, 9]\nres = numbers[0] / numbers[1]  # 96 / 9 = 10.666...\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [10.666666666666666]"
+    },
+    {
+      "id": 35,
+      "state": "[0.09375]",
+      "action": "[0.09375]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 27,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 9 by 96 to get approximately 0.09375 [9 / 96 = 0.09375] → []",
+        "code": "numbers = [96, 9]\nres = numbers[1] / numbers[0]  # 9 / 96 = 0.09375\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.09375]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nAdd 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [96, 9]\nDivide 9 by 96 to get approximately 0.09375 [9 / 96 = 0.09375] → []\nCode: numbers = [96, 9]\nres = numbers[1] / numbers[0]  # 9 / 96 = 0.09375\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.09375]"
+    },
+    {
+      "id": 36,
+      "state": "[105]",
+      "action": "[105]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 27,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 96 and 9 to get 105 [96 + 9 = 105] → []",
+        "code": "numbers = [96, 9]\nres = numbers[0] + numbers[1]  # 96 + 9 = 105\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[105]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nAdd 90 and 6 to get 96 [90 + 6 = 96] → [96, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] + numbers[1]  # 90 + 6 = 96\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [96, 9]\nAdd 96 and 9 to get 105 [96 + 9 = 105] → []\nCode: numbers = [96, 9]\nres = numbers[0] + numbers[1]  # 96 + 9 = 105\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [105]"
+    },
+    {
+      "id": 37,
+      "state": "[13.5]",
+      "action": "[13.5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 135 by 10 to get 13.5 [135 / 10 = 13.5] → [13.5]",
+        "code": "numbers = [135, 10]\nres = numbers[0] / numbers[1]  # 135 / 10 = 13.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[13.5]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nMultiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]\nCode: numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135, 10]\nDivide 135 by 10 to get 13.5 [135 / 10 = 13.5] → [13.5]\nCode: numbers = [135, 10]\nres = numbers[0] / numbers[1]  # 135 / 10 = 13.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [13.5]"
+    },
+    {
+      "id": 38,
+      "state": "[1350]",
+      "action": "[1350]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 135 and 10 to get 1350 [135 * 10 = 1350] → [1350]",
+        "code": "numbers = [135, 10]\nres = numbers[0] * numbers[1]  # 135 * 10 = 1350\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1350]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nMultiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]\nCode: numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135, 10]\nMultiply 135 and 10 to get 1350 [135 * 10 = 1350] → [1350]\nCode: numbers = [135, 10]\nres = numbers[0] * numbers[1]  # 135 * 10 = 1350\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1350]"
+    },
+    {
+      "id": 39,
+      "state": "[125]",
+      "action": "[125]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 135 to get 125 [135 - 10 = 125] → [125]",
+        "code": "numbers = [135, 10]\nres = numbers[0] - numbers[1]  # 135 - 10 = 125\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[125]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nMultiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]\nCode: numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135, 10]\nSubtract 10 from 135 to get 125 [135 - 10 = 125] → [125]\nCode: numbers = [135, 10]\nres = numbers[0] - numbers[1]  # 135 - 10 = 125\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [125]"
+    },
+    {
+      "id": 40,
+      "state": "[145]",
+      "action": "[145]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 135 and 10 to get 145 [135 + 10 = 145] → [145]",
+        "code": "numbers = [135, 10]\nres = numbers[0] + numbers[1]  # 135 + 10 = 145\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[145]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nMultiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]\nCode: numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135, 10]\nAdd 135 and 10 to get 145 [135 + 10 = 145] → [145]\nCode: numbers = [135, 10]\nres = numbers[0] + numbers[1]  # 135 + 10 = 145\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [145]"
+    },
+    {
+      "id": 41,
+      "state": "[0.07407407407407407]",
+      "action": "[0.07407407407407407]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 135 to get approximately 0.074 [10 / 135 = 0.074] → [0.074]",
+        "code": "numbers = [135, 10]\nres = numbers[1] / numbers[0]  # 10 / 135 = 0.074\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.07407407407407407]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nMultiply 15 and 9 to get 135 [15 * 9 = 135] → [10, 135]\nCode: numbers = [15, 9, 10]\nres = numbers[0] * numbers[1]  # 15 * 9 = 135\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135, 10]\nDivide 10 by 135 to get approximately 0.074 [10 / 135 = 0.074] → [0.074]\nCode: numbers = [135, 10]\nres = numbers[1] / numbers[0]  # 10 / 135 = 0.074\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.07407407407407407]"
+    },
+    {
+      "id": 42,
+      "state": "[55]",
+      "action": "[55]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 15,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 45 and 10 to get 55 [45 + 10 = 55] → [55]",
+        "code": "numbers = [45, 10]\nres = numbers[0] + numbers[1]  # 45 + 10 = 55\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[55]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nSubtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]\nCode: numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [45, 10]\nAdd 45 and 10 to get 55 [45 + 10 = 55] → [55]\nCode: numbers = [45, 10]\nres = numbers[0] + numbers[1]  # 45 + 10 = 55\nnew_numbers = [res]\nprint(new_numbers)\nResult: [55]"
+    },
+    {
+      "id": 43,
+      "state": "[35]",
+      "action": "[35]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 15,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 45 to get 35 [45 - 10 = 35] → [35]",
+        "code": "numbers = [45, 10]\nres = numbers[0] - numbers[1]  # 45 - 10 = 35\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[35]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nSubtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]\nCode: numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [45, 10]\nSubtract 10 from 45 to get 35 [45 - 10 = 35] → [35]\nCode: numbers = [45, 10]\nres = numbers[0] - numbers[1]  # 45 - 10 = 35\nnew_numbers = [res]\nprint(new_numbers)\nResult: [35]"
+    },
+    {
+      "id": 44,
+      "state": "[450]",
+      "action": "[450]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 15,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 45 and 10 to get 450 [45 * 10 = 450] → [450]",
+        "code": "numbers = [45, 10]\nres = numbers[0] * numbers[1]  # 45 * 10 = 450\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[450]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nSubtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]\nCode: numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [45, 10]\nMultiply 45 and 10 to get 450 [45 * 10 = 450] → [450]\nCode: numbers = [45, 10]\nres = numbers[0] * numbers[1]  # 45 * 10 = 450\nnew_numbers = [res]\nprint(new_numbers)\nResult: [450]"
+    },
+    {
+      "id": 45,
+      "state": "[4.5]",
+      "action": "[4.5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 15,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 45 by 10 to get 4.5 [45 / 10 = 4.5] → [4.5]",
+        "code": "numbers = [45, 10]\nres = numbers[0] / numbers[1]  # 45 / 10 = 4.5\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[4.5]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nSubtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]\nCode: numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [45, 10]\nDivide 45 by 10 to get 4.5 [45 / 10 = 4.5] → [4.5]\nCode: numbers = [45, 10]\nres = numbers[0] / numbers[1]  # 45 / 10 = 4.5\nnew_numbers = [res]\nprint(new_numbers)\nResult: [4.5]"
+    },
+    {
+      "id": 46,
+      "state": "[0.2222222222222222]",
+      "action": "[0.2222222222222222]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 15,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 45 to get approximately 0.22 [10 / 45 = 0.2222...] → [0.2222...]",
+        "code": "numbers = [45, 10]\nres = numbers[1] / numbers[0]  # 10 / 45 = 0.2222...\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[0.2222222222222222]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nSubtract 9 from 54 to get 45 [54 - 9 = 45] → [10, 45]\nCode: numbers = [54, 9, 10]\nres = numbers[0] - numbers[1]  # 54 - 9 = 45\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [45, 10]\nDivide 10 by 45 to get approximately 0.22 [10 / 45 = 0.2222...] → [0.2222...]\nCode: numbers = [45, 10]\nres = numbers[1] / numbers[0]  # 10 / 45 = 0.2222...\nnew_numbers = [res]\nprint(new_numbers)\nResult: [0.2222222222222222]"
+    },
+    {
+      "id": 47,
+      "state": "[22]",
+      "action": "[22]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 17,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 12 and 10 to get 22 [12 + 10 = 22] → [22]",
+        "code": "numbers = [12, 10]\nres = numbers[0] + numbers[1]  # 12 + 10 = 22\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[22]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nAdd 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]\nCode: numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 10]\nAdd 12 and 10 to get 22 [12 + 10 = 22] → [22]\nCode: numbers = [12, 10]\nres = numbers[0] + numbers[1]  # 12 + 10 = 22\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [22]"
+    },
+    {
+      "id": 48,
+      "state": "[2]",
+      "action": "[2]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 17,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 12 to get 2 [12 - 10 = 2] → [2]",
+        "code": "numbers = [12, 10]\nres = numbers[0] - numbers[1]  # 12 - 10 = 2\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nAdd 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]\nCode: numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 10]\nSubtract 10 from 12 to get 2 [12 - 10 = 2] → [2]\nCode: numbers = [12, 10]\nres = numbers[0] - numbers[1]  # 12 - 10 = 2\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2]"
+    },
+    {
+      "id": 49,
+      "state": "[120]",
+      "action": "[120]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 17,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 12 and 10 to get 120 [12 * 10 = 120] → [120]",
+        "code": "numbers = [12, 10]\nres = numbers[0] * numbers[1]  # 12 * 10 = 120\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[120]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nAdd 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]\nCode: numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 10]\nMultiply 12 and 10 to get 120 [12 * 10 = 120] → [120]\nCode: numbers = [12, 10]\nres = numbers[0] * numbers[1]  # 12 * 10 = 120\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [120]"
+    },
+    {
+      "id": 50,
+      "state": "[1.2]",
+      "action": "[1.2]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 17,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 12 by 10 to get 1.2 [12 / 10 = 1.2] → [1.2]",
+        "code": "numbers = [12, 10]\nres = numbers[0] / numbers[1]  # 12 / 10 = 1.2\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.2]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nAdd 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]\nCode: numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 10]\nDivide 12 by 10 to get 1.2 [12 / 10 = 1.2] → [1.2]\nCode: numbers = [12, 10]\nres = numbers[0] / numbers[1]  # 12 / 10 = 1.2\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2]"
+    },
+    {
+      "id": 51,
+      "state": "[0.8333333333333334]",
+      "action": "[0.8333333333333334]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 17,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 12 to get approximately 0.833 [10 / 12 = 0.833] → [0.833]",
+        "code": "numbers = [12, 10]\nres = numbers[1] / numbers[0]  # 10 / 12 = 0.833\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.8333333333333334]"
+      },
+      "path_history": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → [9, 10, 3]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] - numbers[0]  # 9 - 6 = 3\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3, 9, 10]\nAdd 3 and 9 to get 12 [3 + 9 = 12] → [10, 12]\nCode: numbers = [3, 9, 10]\nres = numbers[0] + numbers[1]  # 3 + 9 = 12\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 10]\nDivide 10 by 12 to get approximately 0.833 [10 / 12 = 0.833] → [0.833]\nCode: numbers = [12, 10]\nres = numbers[1] / numbers[0]  # 10 / 12 = 0.833\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.8333333333333334]"
+    },
+    {
+      "id": 52,
+      "state": "[6.0]",
+      "action": "[6.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 30,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 9 from 15.0 to get 6. [15.0 - 9 = 6.0] → [6.0]",
+        "code": "numbers = [15.0, 9]\nres = numbers[0] - numbers[1]  # 15.0 - 9 = 6.0\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[6.0]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nDivide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.0, 9]\nSubtract 9 from 15.0 to get 6. [15.0 - 9 = 6.0] → [6.0]\nCode: numbers = [15.0, 9]\nres = numbers[0] - numbers[1]  # 15.0 - 9 = 6.0\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0]"
+    },
+    {
+      "id": 53,
+      "state": "[1.6666666666666667]",
+      "action": "[1.6666666666666667]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 30,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 15.0 by 9 to get approximately 1.67. [15.0 / 9 = 1.6666666666666667] → []",
+        "code": "numbers = [15.0, 9]\nres = numbers[0] / numbers[1]  # 15.0 / 9 = 1.6666666666666667\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.6666666666666667]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nDivide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.0, 9]\nDivide 15.0 by 9 to get approximately 1.67. [15.0 / 9 = 1.6666666666666667] → []\nCode: numbers = [15.0, 9]\nres = numbers[0] / numbers[1]  # 15.0 / 9 = 1.6666666666666667\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.6666666666666667]"
+    },
+    {
+      "id": 54,
+      "state": "[135.0]",
+      "action": "[135.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 30,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 15.0 and 9 to get 135. [15.0 * 9 = 135.0] → []",
+        "code": "numbers = [15.0, 9]\nres = numbers[0] * numbers[1]  # 15.0 * 9 = 135.0\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[135.0]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nDivide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.0, 9]\nMultiply 15.0 and 9 to get 135. [15.0 * 9 = 135.0] → []\nCode: numbers = [15.0, 9]\nres = numbers[0] * numbers[1]  # 15.0 * 9 = 135.0\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135.0]"
+    },
+    {
+      "id": 55,
+      "state": "[24.0]",
+      "action": "[24.0]",
+      "value": 100.0,
+      "depth": 3,
+      "is_solution": true,
+      "is_pruned": false,
+      "parent_id": 30,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 15.0 and 9 to get 24. [15.0 + 9 = 24.0] → []",
+        "code": "numbers = [15.0, 9]\nres = numbers[0] + numbers[1]  # 15.0 + 9 = 24.0\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24.0]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nDivide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.0, 9]\nAdd 15.0 and 9 to get 24. [15.0 + 9 = 24.0] → []\nCode: numbers = [15.0, 9]\nres = numbers[0] + numbers[1]  # 15.0 + 9 = 24.0\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24.0]"
+    },
+    {
+      "id": 56,
+      "state": "[0.6]",
+      "action": "[0.6]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 30,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 9 by 15.0 to get 0.6. [9 / 15.0 = 0.6] → []",
+        "code": "numbers = [15.0, 9]\nres = numbers[1] / numbers[0]  # 9 / 15.0 = 0.6\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.6]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nDivide 90 by 6 to get 15 [90 / 6 = 15] → [15, 9]\nCode: numbers = [90, 6, 9]\nres = numbers[0] / numbers[1]  # 90 / 6 = 15\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.0, 9]\nDivide 9 by 15.0 to get 0.6. [9 / 15.0 = 0.6] → []\nCode: numbers = [15.0, 9]\nres = numbers[1] / numbers[0]  # 9 / 15.0 = 0.6\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.6]"
+    },
+    {
+      "id": 57,
+      "state": "[135.0]",
+      "action": "[135.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 810 by 6 to get 135 [810 / 6 = 135] → [135]",
+        "code": "numbers = [810, 6]\nres = numbers[0] / numbers[1]  # 810 / 6 = 135\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[135.0]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]\nCode: numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [810, 6]\nDivide 810 by 6 to get 135 [810 / 6 = 135] → [135]\nCode: numbers = [810, 6]\nres = numbers[0] / numbers[1]  # 810 / 6 = 135\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [135.0]"
+    },
+    {
+      "id": 58,
+      "state": "[4860]",
+      "action": "[4860]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 810 and 6 to get 4860 [810 * 6 = 4860] → [4860]",
+        "code": "numbers = [810, 6]\nres = numbers[0] * numbers[1]  # 810 * 6 = 4860\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4860]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]\nCode: numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [810, 6]\nMultiply 810 and 6 to get 4860 [810 * 6 = 4860] → [4860]\nCode: numbers = [810, 6]\nres = numbers[0] * numbers[1]  # 810 * 6 = 4860\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4860]"
+    },
+    {
+      "id": 59,
+      "state": "[804]",
+      "action": "[804]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 810 to get 804 [810 - 6 = 804] → [804]",
+        "code": "numbers = [810, 6]\nres = numbers[0] - numbers[1]  # 810 - 6 = 804\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[804]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]\nCode: numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [810, 6]\nSubtract 6 from 810 to get 804 [810 - 6 = 804] → [804]\nCode: numbers = [810, 6]\nres = numbers[0] - numbers[1]  # 810 - 6 = 804\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [804]"
+    },
+    {
+      "id": 60,
+      "state": "[816]",
+      "action": "[816]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 810 and 6 to get 816 [810 + 6 = 816] → [816]",
+        "code": "numbers = [810, 6]\nres = numbers[0] + numbers[1]  # 810 + 6 = 816\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[816]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]\nCode: numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [810, 6]\nAdd 810 and 6 to get 816 [810 + 6 = 816] → [816]\nCode: numbers = [810, 6]\nres = numbers[0] + numbers[1]  # 810 + 6 = 816\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [816]"
+    },
+    {
+      "id": 61,
+      "state": "[0.007407407407407408]",
+      "action": "[0.007407407407407408]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 29,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6 by 810 to get 0.0074 [6 / 810 = 0.0074] → [0.0074]",
+        "code": "numbers = [810, 6]\nres = numbers[1] / numbers[0]  # 6 / 810 = 0.0074\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.007407407407407408]"
+      },
+      "path_history": "Multiply 9 and 10 to get 90 [9 * 10 = 90] → [6, 9, 90]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[1] * numbers[3]  # 9 * 10 = 90\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 6, 9]\nMultiply 90 and 9 to get 810 [90 * 9 = 810] → [810, 6]\nCode: numbers = [90, 6, 9]\nres = numbers[0] * numbers[2]  # 90 * 9 = 810\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [810, 6]\nDivide 6 by 810 to get 0.0074 [6 / 810 = 0.0074] → [0.0074]\nCode: numbers = [810, 6]\nres = numbers[1] / numbers[0]  # 6 / 810 = 0.0074\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.007407407407407408]"
+    },
+    {
+      "id": 62,
+      "state": "[16.0]",
+      "action": "[16.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 6.0 and 10 to get 16.0 [6.0 + 10 = 16.0] → [16.0]",
+        "code": "numbers = [6.0, 10]\nres = numbers[0] + numbers[1]  # 6.0 + 10 = 16.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[16.0]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nDivide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]\nCode: numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0, 10]\nAdd 6.0 and 10 to get 16.0 [6.0 + 10 = 16.0] → [16.0]\nCode: numbers = [6.0, 10]\nres = numbers[0] + numbers[1]  # 6.0 + 10 = 16.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [16.0]"
+    },
+    {
+      "id": 63,
+      "state": "[4.0]",
+      "action": "[4.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6.0 from 10 to get 4.0 [10 - 6.0 = 4.0] → [4.0]",
+        "code": "numbers = [6.0, 10]\nres = numbers[1] - numbers[0]  # 10 - 6.0 = 4.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[4.0]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nDivide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]\nCode: numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0, 10]\nSubtract 6.0 from 10 to get 4.0 [10 - 6.0 = 4.0] → [4.0]\nCode: numbers = [6.0, 10]\nres = numbers[1] - numbers[0]  # 10 - 6.0 = 4.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [4.0]"
+    },
+    {
+      "id": 64,
+      "state": "[60.0]",
+      "action": "[60.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 6.0 and 10 to get 60.0 [6.0 * 10 = 60.0] → [60.0]",
+        "code": "numbers = [6.0, 10]\nres = numbers[0] * numbers[1]  # 6.0 * 10 = 60.0\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[60.0]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nDivide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]\nCode: numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0, 10]\nMultiply 6.0 and 10 to get 60.0 [6.0 * 10 = 60.0] → [60.0]\nCode: numbers = [6.0, 10]\nres = numbers[0] * numbers[1]  # 6.0 * 10 = 60.0\nnew_numbers = [res]\nprint(new_numbers)\nResult: [60.0]"
+    },
+    {
+      "id": 65,
+      "state": "[1.6666666666666667]",
+      "action": "[1.6666666666666667]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 6.0 to get approximately 1.6667 [10 / 6.0 = 1.6666666666666667] → [1.6666666666666667]",
+        "code": "numbers = [6.0, 10]\nres = numbers[1] / numbers[0]  # 10 / 6.0 = 1.6666666666666667\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[1.6666666666666667]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nDivide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]\nCode: numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0, 10]\nDivide 10 by 6.0 to get approximately 1.6667 [10 / 6.0 = 1.6666666666666667] → [1.6666666666666667]\nCode: numbers = [6.0, 10]\nres = numbers[1] / numbers[0]  # 10 / 6.0 = 1.6666666666666667\nnew_numbers = [res]\nprint(new_numbers)\nResult: [1.6666666666666667]"
+    },
+    {
+      "id": 66,
+      "state": "[0.6]",
+      "action": "[0.6]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6.0 by 10 to get 0.6 [6.0 / 10 = 0.6] → [0.6]",
+        "code": "numbers = [6.0, 10]\nres = numbers[0] / numbers[1]  # 6.0 / 10 = 0.6\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[0.6]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nDivide 54 by 9 to get 6 [54 / 9 = 6] → [6, 10]\nCode: numbers = [54, 9, 10]\nres = numbers[0] / numbers[1]  # 54 / 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.0, 10]\nDivide 6.0 by 10 to get 0.6 [6.0 / 10 = 0.6] → [0.6]\nCode: numbers = [6.0, 10]\nres = numbers[0] / numbers[1]  # 6.0 / 10 = 0.6\nnew_numbers = [res]\nprint(new_numbers)\nResult: [0.6]"
+    },
+    {
+      "id": 67,
+      "state": "[36]",
+      "action": "[36]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 16,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 54 from 90 to get 36 [90 - 54 = 36] → [36]",
+        "code": "numbers = [90, 54]\nres = numbers[0] - numbers[1]  # 90 - 54 = 36\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[36]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]\nCode: numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 54]\nSubtract 54 from 90 to get 36 [90 - 54 = 36] → [36]\nCode: numbers = [90, 54]\nres = numbers[0] - numbers[1]  # 90 - 54 = 36\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [36]"
+    },
+    {
+      "id": 68,
+      "state": "[4860]",
+      "action": "[4860]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 16,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 54 and 90 to get 4860 [54 * 90 = 4860] → [4860]",
+        "code": "numbers = [90, 54]\nres = numbers[0] * numbers[1]  # 90 * 54 = 4860\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4860]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]\nCode: numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 54]\nMultiply 54 and 90 to get 4860 [54 * 90 = 4860] → [4860]\nCode: numbers = [90, 54]\nres = numbers[0] * numbers[1]  # 90 * 54 = 4860\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4860]"
+    },
+    {
+      "id": 69,
+      "state": "[1.6666666666666667]",
+      "action": "[1.6666666666666667]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 16,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 90 by 54 to get 5/3 [90 / 54 = 5/3 = 1.666...] → [1.666...]",
+        "code": "numbers = [90, 54]\nres = numbers[0] / numbers[1]  # 90 / 54 = 5/3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.6666666666666667]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]\nCode: numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 54]\nDivide 90 by 54 to get 5/3 [90 / 54 = 5/3 = 1.666...] → [1.666...]\nCode: numbers = [90, 54]\nres = numbers[0] / numbers[1]  # 90 / 54 = 5/3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.6666666666666667]"
+    },
+    {
+      "id": 70,
+      "state": "[0.6]",
+      "action": "[0.6]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 16,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 54 by 90 to get 3/5 [54 / 90 = 3/5 = 0.6] → [0.6]",
+        "code": "numbers = [90, 54]\nres = numbers[1] / numbers[0]  # 54 / 90 = 3/5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.6]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]\nCode: numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 54]\nDivide 54 by 90 to get 3/5 [54 / 90 = 3/5 = 0.6] → [0.6]\nCode: numbers = [90, 54]\nres = numbers[1] / numbers[0]  # 54 / 90 = 3/5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.6]"
+    },
+    {
+      "id": 71,
+      "state": "[144]",
+      "action": "[144]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 16,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 90 and 54 to get 144 [90 + 54 = 144] → [144]",
+        "code": "numbers = [90, 54]\nres = numbers[0] + numbers[1]  # 90 + 54 = 144\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[144]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nMultiply 9 and 10 to get 90 [9 * 10 = 90] → [54, 90]\nCode: numbers = [54, 9, 10]\nres = numbers[1] * numbers[2]  # 9 * 10 = 90\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [90, 54]\nAdd 90 and 54 to get 144 [90 + 54 = 144] → [144]\nCode: numbers = [90, 54]\nres = numbers[0] + numbers[1]  # 90 + 54 = 144\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [144]"
+    },
+    {
+      "id": 72,
+      "state": "[16]",
+      "action": "[16]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 6 and 10 to get 16 [6 + 10 = 16] → [16]",
+        "code": "numbers = [6, 10]\nres = numbers[0] + numbers[1]  # 6 + 10 = 16\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[16]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nSubtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]\nCode: numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6, 10]\nAdd 6 and 10 to get 16 [6 + 10 = 16] → [16]\nCode: numbers = [6, 10]\nres = numbers[0] + numbers[1]  # 6 + 10 = 16\nnew_numbers = [res]\nprint(new_numbers)\nResult: [16]"
+    },
+    {
+      "id": 73,
+      "state": "[-4]",
+      "action": "[-4]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 6 to get -4 [6 - 10 = -4] → [-4]",
+        "code": "numbers = [6, 10]\nres = numbers[0] - numbers[1]  # 6 - 10 = -4\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[-4]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nSubtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]\nCode: numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6, 10]\nSubtract 10 from 6 to get -4 [6 - 10 = -4] → [-4]\nCode: numbers = [6, 10]\nres = numbers[0] - numbers[1]  # 6 - 10 = -4\nnew_numbers = [res]\nprint(new_numbers)\nResult: [-4]"
+    },
+    {
+      "id": 74,
+      "state": "[60]",
+      "action": "[60]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 6 and 10 to get 60 [6 * 10 = 60] → [60]",
+        "code": "numbers = [6, 10]\nres = numbers[0] * numbers[1]  # 6 * 10 = 60\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[60]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nSubtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]\nCode: numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6, 10]\nMultiply 6 and 10 to get 60 [6 * 10 = 60] → [60]\nCode: numbers = [6, 10]\nres = numbers[0] * numbers[1]  # 6 * 10 = 60\nnew_numbers = [res]\nprint(new_numbers)\nResult: [60]"
+    },
+    {
+      "id": 75,
+      "state": "[1.6666666666666667]",
+      "action": "[1.6666666666666667]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 6 to get 5/3 [10 / 6 = 5/3] → [5/3]",
+        "code": "numbers = [6, 10]\nres = numbers[1] / numbers[0]  # 10 / 6 = 5/3\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[1.6666666666666667]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nSubtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]\nCode: numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6, 10]\nDivide 10 by 6 to get 5/3 [10 / 6 = 5/3] → [5/3]\nCode: numbers = [6, 10]\nres = numbers[1] / numbers[0]  # 10 / 6 = 5/3\nnew_numbers = [res]\nprint(new_numbers)\nResult: [1.6666666666666667]"
+    },
+    {
+      "id": 76,
+      "state": "[0.6]",
+      "action": "[0.6]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6 by 10 to get 3/5 [6 / 10 = 3/5] → [3/5]",
+        "code": "numbers = [6, 10]\nres = numbers[0] / numbers[1]  # 6 / 10 = 3/5\nnew_numbers = [res]\nprint(new_numbers)",
+        "observation": "[0.6]"
+      },
+      "path_history": "Add 6 and 9 to get 15 [6 + 9 = 15] → [9, 10, 15]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] + numbers[1]  # 6 + 9 = 15\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 9, 10]\nSubtract 9 from 15 to get 6 [15 - 9 = 6] → [10, 6]\nCode: numbers = [15, 9, 10]\nres = numbers[0] - numbers[1]  # 15 - 9 = 6\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6, 10]\nDivide 6 by 10 to get 3/5 [6 / 10 = 3/5] → [3/5]\nCode: numbers = [6, 10]\nres = numbers[0] / numbers[1]  # 6 / 10 = 3/5\nnew_numbers = [res]\nprint(new_numbers)\nResult: [0.6]"
+    },
+    {
+      "id": 77,
+      "state": "[53]",
+      "action": "[53]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 63 [63 - 10 = 53] → [53]",
+        "code": "numbers = [63, 10]\nres = numbers[0] - numbers[1]  # 63 - 10 = 53\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[53]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nAdd 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]\nCode: numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 10]\nSubtract 10 from 63 [63 - 10 = 53] → [53]\nCode: numbers = [63, 10]\nres = numbers[0] - numbers[1]  # 63 - 10 = 53\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [53]"
+    },
+    {
+      "id": 78,
+      "state": "[73]",
+      "action": "[73]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 63 and 10 [63 + 10 = 73] → [73]",
+        "code": "numbers = [63, 10]\nres = numbers[0] + numbers[1]  # 63 + 10 = 73\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[73]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nAdd 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]\nCode: numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 10]\nAdd 63 and 10 [63 + 10 = 73] → [73]\nCode: numbers = [63, 10]\nres = numbers[0] + numbers[1]  # 63 + 10 = 73\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [73]"
+    },
+    {
+      "id": 79,
+      "state": "[630]",
+      "action": "[630]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 63 and 10 [63 * 10 = 630] → [630]",
+        "code": "numbers = [63, 10]\nres = numbers[0] * numbers[1]  # 63 * 10 = 630\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[630]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nAdd 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]\nCode: numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 10]\nMultiply 63 and 10 [63 * 10 = 630] → [630]\nCode: numbers = [63, 10]\nres = numbers[0] * numbers[1]  # 63 * 10 = 630\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [630]"
+    },
+    {
+      "id": 80,
+      "state": "[6.3]",
+      "action": "[6.3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 63 by 10 [63 / 10 = 6.3] → [6.3]",
+        "code": "numbers = [63, 10]\nres = numbers[0] / numbers[1]  # 63 / 10 = 6.3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[6.3]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nAdd 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]\nCode: numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 10]\nDivide 63 by 10 [63 / 10 = 6.3] → [6.3]\nCode: numbers = [63, 10]\nres = numbers[0] / numbers[1]  # 63 / 10 = 6.3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [6.3]"
+    },
+    {
+      "id": 81,
+      "state": "[0.15873015873015872]",
+      "action": "[0.15873015873015872]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 63 [10 / 63 = 0.15873015873015873] → [0.15873015873015873]",
+        "code": "numbers = [63, 10]\nres = numbers[1] / numbers[0]  # 10 / 63 = 0.15873015873015873\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.15873015873015872]"
+      },
+      "path_history": "Multiply 6 and 9 to get 54 [6 * 9 = 54] → [9, 10, 54]\nCode: numbers = [6, 9, 9, 10]\nres = numbers[0] * numbers[1]  # 6 * 9 = 54\nremaining = [numbers[2], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54, 9, 10]\nAdd 54 and 9 to get 63 [54 + 9 = 63] → [10, 63]\nCode: numbers = [54, 9, 10]\nres = numbers[0] + numbers[1]  # 54 + 9 = 63\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [63, 10]\nDivide 10 by 63 [10 / 63 = 0.15873015873015873] → [0.15873015873015873]\nCode: numbers = [63, 10]\nres = numbers[1] / numbers[0]  # 10 / 63 = 0.15873015873015873\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.15873015873015872]"
+    }
+  ],
+  "solutions": [
+    55
+  ]
+}

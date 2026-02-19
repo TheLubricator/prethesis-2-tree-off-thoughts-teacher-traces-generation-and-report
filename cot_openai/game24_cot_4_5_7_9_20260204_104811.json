@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:11.195477",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.92
+  },
+  "problem": {
+    "numbers": [
+      4,
+      5,
+      7,
+      9
+    ],
+    "input_string": "4 5 7 9"
+  },
+  "solution": {
+    "steps": [
+      "9 - 4 = 5 (left: 5 5 7)",
+      "5 + 5 = 10 (left: 10 7)",
+      "10 * 7 = 70 (left: 70)"
+    ],
+    "final_result": "70",
+    "expression": "(9 - 4) + (5 + 5) * 7",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "9 - 4 = 5 (left: 5 5 7)\n5 + 5 = 10 (left: 10 7)\n10 * 7 = 70 (left: 70)\nAnswer: (9 - 4) + (5 + 5) * 7"
+  }
+}

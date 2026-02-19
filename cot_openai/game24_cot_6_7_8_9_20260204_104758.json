@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:47:58.313392",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.98
+  },
+  "problem": {
+    "numbers": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "input_string": "6 7 8 9"
+  },
+  "solution": {
+    "steps": [
+      "8 - 6 = 2 (left: 2 7 9)",
+      "9 - 7 = 2 (left: 2 2)",
+      "2 * 2 = 4 (left: 4)"
+    ],
+    "final_result": "4",
+    "expression": "(9 - 7) * (8 - 6)",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "8 - 6 = 2 (left: 2 7 9)  \n9 - 7 = 2 (left: 2 2)  \n2 * 2 = 4 (left: 4)  \nAnswer: (9 - 7) * (8 - 6)"
+  }
+}

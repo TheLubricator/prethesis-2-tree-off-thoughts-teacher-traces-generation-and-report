@@ -1,0 +1,3291 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-03T20:32:03.228259",
+    "mode": "CodeAct",
+    "parameters": {
+      "temperature": 0.7,
+      "n_evaluate_sample": 3,
+      "n_select_sample": 10,
+      "max_steps": 6,
+      "api_delay": 0.15
+    },
+    "statistics": {
+      "total_nodes": 81,
+      "api_calls": 31,
+      "cache_hits": 0,
+      "solutions_found": 2,
+      "code_executions": 85,
+      "code_errors": 0,
+      "daily_requests": 31,
+      "session_start": "2026-02-03T20:27:26.055872"
+    }
+  },
+  "nodes": [
+    {
+      "id": 1,
+      "state": "",
+      "action": "START",
+      "value": 0.0,
+      "depth": 0,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": null,
+      "children_ids": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Initial state",
+        "code": "",
+        "observation": "Starting numbers: [4, 5, 6, 10]"
+      },
+      "path_history": "",
+      "evaluation": null
+    },
+    {
+      "id": 2,
+      "state": "[14, 5, 6]",
+      "action": "[14, 5, 6]",
+      "value": 60.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]",
+        "code": "numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[14, 5, 6]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]",
+      "evaluation": {
+        "state": "[14, 5, 6]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 14,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0
+        },
+        "llm_judgments": [
+          "sure",
+          "sure",
+          "sure"
+        ],
+        "reasoning": [
+          "LLM is confident this can reach 24 (judgments: ['sure', 'sure', 'sure'])"
+        ],
+        "score_breakdown": {
+          "sure_count": 3,
+          "likely_count": 0,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 60.0,
+          "boosted_score": 60.0,
+          "confidence_level": "high"
+        },
+        "final_value": 60.0,
+        "llm_prompt": "<start_of_turn>user\nYou are evaluating whether the given numbers can still reach 24.\n\nRespond with ONLY one word:\nsure / likely / impossible\n\nImportant reasoning rules:\n\n1. Numbers above 24 can still be useful through subtraction.\n2. States containing exactly ONE non-integer value can be PROMISING,\n   especially if at least one remaining number is a small integer (≤ 6).\n3. Do NOT penalize fractions unless it is clear they cannot combine with\n   remaining numbers.\n4. **If exactly TWO numbers remain and ANY single operation (+, -, *, /) yields 24, answer \"sure\".**\n5. If the state requires precise ordering of operations, answer \"likely\"\n   rather than \"impossible\".\n6. Answer \"impossible\" ONLY if no sequence of +, -, *, / can reasonably reach 24.\n\nExamples:\n\nNumbers: [10, 14]\nReasoning: 10 + 14 = 24\nAnswer: sure\n\nNumbers: [15, 9]\nReasoning: 15 + 9 = 24 (only two numbers, one operation works)\nAnswer: sure\n\nNumbers: [11, 12]\nReasoning: 11 + 12 = 23, no way to reach 24\nAnswer: impossible\n\nNumbers: [4, 4, 10]\nReasoning: (10 - 4) * 4 = 24\nAnswer: sure\n\nNumbers: [30, 4, 10]\nReasoning: 30 can be adjusted via subtraction\nAnswer: likely\n\nNumbers: [5/2, 3, 12]\nReasoning: Fraction can combine with 3 to adjust 12\nAnswer: likely\n\nNumbers: [5/2, 7, 9]\nReasoning: Fraction does not combine well with remaining numbers\nAnswer: impossible\n\nNumbers: [14, 5, 6]\nAnswer:<end_of_turn>\n<start_of_turn>model\n",
+        "from_cache": false,
+        "llm_raw_responses": [
+          "sure",
+          "sure",
+          "sure"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "state": "[30, 4, 10]",
+      "action": "[30, 4, 10]",
+      "value": 3.5999999999999996,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]",
+        "code": "numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[30, 4, 10]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]",
+      "evaluation": {
+        "state": "[30, 4, 10]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 30,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": true,
+          "has_small_adjusters": true,
+          "promising_pattern": true,
+          "llm_boost_factor": 1.2
+        },
+        "llm_judgments": [
+          "likely",
+          "likely",
+          "likely"
+        ],
+        "reasoning": [
+          "Promising pattern: has number(s) near 24 [30] with small adjuster(s) [4, 10]",
+          "LLM sees potential but is uncertain (judgments: ['likely', 'likely', 'likely'])"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 3,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 3.0,
+          "boosted_score": 3.5999999999999996,
+          "confidence_level": "medium"
+        },
+        "final_value": 3.5999999999999996,
+        "llm_prompt": "<start_of_turn>user\nYou are evaluating whether the given numbers can still reach 24.\n\nRespond with ONLY one word:\nsure / likely / impossible\n\nImportant reasoning rules:\n\n1. Numbers above 24 can still be useful through subtraction.\n2. States containing exactly ONE non-integer value can be PROMISING,\n   especially if at least one remaining number is a small integer (≤ 6).\n3. Do NOT penalize fractions unless it is clear they cannot combine with\n   remaining numbers.\n4. **If exactly TWO numbers remain and ANY single operation (+, -, *, /) yields 24, answer \"sure\".**\n5. If the state requires precise ordering of operations, answer \"likely\"\n   rather than \"impossible\".\n6. Answer \"impossible\" ONLY if no sequence of +, -, *, / can reasonably reach 24.\n\nExamples:\n\nNumbers: [10, 14]\nReasoning: 10 + 14 = 24\nAnswer: sure\n\nNumbers: [15, 9]\nReasoning: 15 + 9 = 24 (only two numbers, one operation works)\nAnswer: sure\n\nNumbers: [11, 12]\nReasoning: 11 + 12 = 23, no way to reach 24\nAnswer: impossible\n\nNumbers: [4, 4, 10]\nReasoning: (10 - 4) * 4 = 24\nAnswer: sure\n\nNumbers: [30, 4, 10]\nReasoning: 30 can be adjusted via subtraction\nAnswer: likely\n\nNumbers: [5/2, 3, 12]\nReasoning: Fraction can combine with 3 to adjust 12\nAnswer: likely\n\nNumbers: [5/2, 7, 9]\nReasoning: Fraction does not combine well with remaining numbers\nAnswer: impossible\n\nNumbers: [30, 4, 10]\nAnswer:<end_of_turn>\n<start_of_turn>model\n",
+        "from_cache": false,
+        "llm_raw_responses": [
+          "likely",
+          "likely",
+          "likely"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "state": "[5, 4, 6]",
+      "action": "[5, 4, 6]",
+      "value": 60.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]",
+        "code": "numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[5, 4, 6]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]",
+      "evaluation": {
+        "state": "[5, 4, 6]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 6,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0
+        },
+        "llm_judgments": [
+          "sure",
+          "sure",
+          "sure"
+        ],
+        "reasoning": [
+          "LLM is confident this can reach 24 (judgments: ['sure', 'sure', 'sure'])"
+        ],
+        "score_breakdown": {
+          "sure_count": 3,
+          "likely_count": 0,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 60.0,
+          "boosted_score": 60.0,
+          "confidence_level": "high"
+        },
+        "final_value": 60.0,
+        "llm_prompt": "<start_of_turn>user\nYou are evaluating whether the given numbers can still reach 24.\n\nRespond with ONLY one word:\nsure / likely / impossible\n\nImportant reasoning rules:\n\n1. Numbers above 24 can still be useful through subtraction.\n2. States containing exactly ONE non-integer value can be PROMISING,\n   especially if at least one remaining number is a small integer (≤ 6).\n3. Do NOT penalize fractions unless it is clear they cannot combine with\n   remaining numbers.\n4. **If exactly TWO numbers remain and ANY single operation (+, -, *, /) yields 24, answer \"sure\".**\n5. If the state requires precise ordering of operations, answer \"likely\"\n   rather than \"impossible\".\n6. Answer \"impossible\" ONLY if no sequence of +, -, *, / can reasonably reach 24.\n\nExamples:\n\nNumbers: [10, 14]\nReasoning: 10 + 14 = 24\nAnswer: sure\n\nNumbers: [15, 9]\nReasoning: 15 + 9 = 24 (only two numbers, one operation works)\nAnswer: sure\n\nNumbers: [11, 12]\nReasoning: 11 + 12 = 23, no way to reach 24\nAnswer: impossible\n\nNumbers: [4, 4, 10]\nReasoning: (10 - 4) * 4 = 24\nAnswer: sure\n\nNumbers: [30, 4, 10]\nReasoning: 30 can be adjusted via subtraction\nAnswer: likely\n\nNumbers: [5/2, 3, 12]\nReasoning: Fraction can combine with 3 to adjust 12\nAnswer: likely\n\nNumbers: [5/2, 7, 9]\nReasoning: Fraction does not combine well with remaining numbers\nAnswer: impossible\n\nNumbers: [5, 4, 6]\nAnswer:<end_of_turn>\n<start_of_turn>model\n",
+        "from_cache": false,
+        "llm_raw_responses": [
+          "sure",
+          "sure",
+          "sure"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "state": "[2.0, 4, 6]",
+      "action": "[2.0, 4, 6]",
+      "value": 3.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]",
+        "code": "numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.0, 4, 6]"
+      },
+      "path_history": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 4, 6]",
+      "evaluation": {
+        "state": "[2.0, 4, 6]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 6,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0
+        },
+        "llm_judgments": [
+          "likely",
+          "likely",
+          "likely"
+        ],
+        "reasoning": [
+          "LLM sees potential but is uncertain (judgments: ['likely', 'likely', 'likely'])"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 3,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 3.0,
+          "boosted_score": 3.0,
+          "confidence_level": "medium"
+        },
+        "final_value": 3.0,
+        "llm_prompt": "<start_of_turn>user\nYou are evaluating whether the given numbers can still reach 24.\n\nRespond with ONLY one word:\nsure / likely / impossible\n\nImportant reasoning rules:\n\n1. Numbers above 24 can still be useful through subtraction.\n2. States containing exactly ONE non-integer value can be PROMISING,\n   especially if at least one remaining number is a small integer (≤ 6).\n3. Do NOT penalize fractions unless it is clear they cannot combine with\n   remaining numbers.\n4. **If exactly TWO numbers remain and ANY single operation (+, -, *, /) yields 24, answer \"sure\".**\n5. If the state requires precise ordering of operations, answer \"likely\"\n   rather than \"impossible\".\n6. Answer \"impossible\" ONLY if no sequence of +, -, *, / can reasonably reach 24.\n\nExamples:\n\nNumbers: [10, 14]\nReasoning: 10 + 14 = 24\nAnswer: sure\n\nNumbers: [15, 9]\nReasoning: 15 + 9 = 24 (only two numbers, one operation works)\nAnswer: sure\n\nNumbers: [11, 12]\nReasoning: 11 + 12 = 23, no way to reach 24\nAnswer: impossible\n\nNumbers: [4, 4, 10]\nReasoning: (10 - 4) * 4 = 24\nAnswer: sure\n\nNumbers: [30, 4, 10]\nReasoning: 30 can be adjusted via subtraction\nAnswer: likely\n\nNumbers: [5/2, 3, 12]\nReasoning: Fraction can combine with 3 to adjust 12\nAnswer: likely\n\nNumbers: [5/2, 7, 9]\nReasoning: Fraction does not combine well with remaining numbers\nAnswer: impossible\n\nNumbers: [2.0, 4, 6]\nAnswer:<end_of_turn>\n<start_of_turn>model\n",
+        "from_cache": false,
+        "llm_raw_responses": [
+          "likely",
+          "likely",
+          "likely"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "state": "[2, 5, 10]",
+      "action": "[2, 5, 10]",
+      "value": 41.0,
+      "depth": 1,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 1,
+      "children_ids": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]",
+        "code": "numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2, 5, 10]"
+      },
+      "path_history": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5, 10]",
+      "evaluation": {
+        "state": "[2, 5, 10]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 10,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0
+        },
+        "llm_judgments": [
+          "sure",
+          "likely",
+          "sure"
+        ],
+        "reasoning": [
+          "LLM is confident this can reach 24 (judgments: ['sure', 'likely', 'sure'])"
+        ],
+        "score_breakdown": {
+          "sure_count": 2,
+          "likely_count": 1,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 41.0,
+          "boosted_score": 41.0,
+          "confidence_level": "high"
+        },
+        "final_value": 41.0,
+        "llm_prompt": "<start_of_turn>user\nYou are evaluating whether the given numbers can still reach 24.\n\nRespond with ONLY one word:\nsure / likely / impossible\n\nImportant reasoning rules:\n\n1. Numbers above 24 can still be useful through subtraction.\n2. States containing exactly ONE non-integer value can be PROMISING,\n   especially if at least one remaining number is a small integer (≤ 6).\n3. Do NOT penalize fractions unless it is clear they cannot combine with\n   remaining numbers.\n4. **If exactly TWO numbers remain and ANY single operation (+, -, *, /) yields 24, answer \"sure\".**\n5. If the state requires precise ordering of operations, answer \"likely\"\n   rather than \"impossible\".\n6. Answer \"impossible\" ONLY if no sequence of +, -, *, / can reasonably reach 24.\n\nExamples:\n\nNumbers: [10, 14]\nReasoning: 10 + 14 = 24\nAnswer: sure\n\nNumbers: [15, 9]\nReasoning: 15 + 9 = 24 (only two numbers, one operation works)\nAnswer: sure\n\nNumbers: [11, 12]\nReasoning: 11 + 12 = 23, no way to reach 24\nAnswer: impossible\n\nNumbers: [4, 4, 10]\nReasoning: (10 - 4) * 4 = 24\nAnswer: sure\n\nNumbers: [30, 4, 10]\nReasoning: 30 can be adjusted via subtraction\nAnswer: likely\n\nNumbers: [5/2, 3, 12]\nReasoning: Fraction can combine with 3 to adjust 12\nAnswer: likely\n\nNumbers: [5/2, 7, 9]\nReasoning: Fraction does not combine well with remaining numbers\nAnswer: impossible\n\nNumbers: [2, 5, 10]\nAnswer:<end_of_turn>\n<start_of_turn>model\n",
+        "from_cache": false,
+        "llm_raw_responses": [
+          "sure",
+          "likely",
+          "sure"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "state": "[9, 6]",
+      "action": "[9, 6]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]",
+        "code": "numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[9, 6]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]",
+      "evaluation": {
+        "state": "[9, 6]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 9,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [9, 6] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 8,
+      "state": "[30, 14]",
+      "action": "[30, 14]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]",
+        "code": "numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[30, 14]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nMultiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]\nCode: numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 14]",
+      "evaluation": {
+        "state": "[30, 14]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 30,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": true,
+          "has_small_adjusters": false,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [30, 14] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 9,
+      "state": "[1.2, 14]",
+      "action": "[1.2, 14]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]",
+        "code": "numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.2, 14]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nDivide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]\nCode: numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2, 14]",
+      "evaluation": {
+        "state": "[1.2, 14]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 14,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [1.2, 14] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 10,
+      "state": "[11, 14]",
+      "action": "[11, 14]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]",
+        "code": "numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[11, 14]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nAdd 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]\nCode: numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 14]",
+      "evaluation": {
+        "state": "[11, 14]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 14,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": false,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [11, 14] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 11,
+      "state": "[8, 5]",
+      "action": "[8, 5]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 2,
+      "children_ids": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]",
+        "code": "numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[8, 5]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]",
+      "evaluation": {
+        "state": "[8, 5]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 8,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [8, 5] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 12,
+      "state": "[9, 6]",
+      "action": "[9, 6]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 4,
+      "children_ids": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]",
+        "code": "numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[9, 6]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nAdd 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]\nCode: numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]",
+      "evaluation": {
+        "state": "[9, 6]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 9,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [9, 6] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 13,
+      "state": "[20, 6]",
+      "action": "[20, 6]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 4,
+      "children_ids": [
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]",
+        "code": "numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[20, 6]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]\nCode: numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 6]",
+      "evaluation": {
+        "state": "[20, 6]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 20,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": true,
+          "has_small_adjusters": true,
+          "promising_pattern": true,
+          "llm_boost_factor": 1.2,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Promising pattern: has number(s) near 24 [20] with small adjuster(s) [6]",
+          "Hard-coded check: [20, 6] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 14,
+      "state": "[2, 5]",
+      "action": "[2, 5]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 4,
+      "children_ids": [
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]",
+        "code": "numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2, 5]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5]",
+      "evaluation": {
+        "state": "[2, 5]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 5,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [2, 5] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 15,
+      "state": "[1, 4]",
+      "action": "[1, 4]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 10 to get 4 [10 - 6 = 4] → left: [5, 4]",
+        "code": "numbers = [5, 4, 6]\nres = numbers[2] - numbers[0]  # 6 - 5 = 1\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1, 4]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 6 from 10 to get 4 [10 - 6 = 4] → left: [5, 4]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[0]  # 6 - 5 = 1\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1, 4]",
+      "evaluation": {
+        "state": "[1, 4]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 4,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [1, 4] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 16,
+      "state": "[24, 5]",
+      "action": "[24, 5]",
+      "value": 0.01,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 4,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 6 and 4 to get 24 [6 * 4 = 24] → left: [5, 24]",
+        "code": "numbers = [5, 4, 6]\nres = numbers[1] * numbers[2]  # 4 * 6 = 24\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24, 5]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 6 and 4 to get 24 [6 * 4 = 24] → left: [5, 24]\nCode: numbers = [5, 4, 6]\nres = numbers[1] * numbers[2]  # 4 * 6 = 24\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24, 5]",
+      "evaluation": {
+        "state": "[24, 5]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": true
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Contains 24 but not final state - this is a dead-end trap!"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.01
+      }
+    },
+    {
+      "id": 17,
+      "state": "[12, 5]",
+      "action": "[12, 5]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 2 and 10 to get 12 [2 + 10 = 12] → [5]",
+        "code": "numbers = [2, 5, 10]\nres = numbers[0] + numbers[2]  # 2 + 10 = 12\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[12, 5]"
+      },
+      "path_history": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5, 10]\nAdd 2 and 10 to get 12 [2 + 10 = 12] → [5]\nCode: numbers = [2, 5, 10]\nres = numbers[0] + numbers[2]  # 2 + 10 = 12\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12, 5]",
+      "evaluation": {
+        "state": "[12, 5]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 12,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [12, 5] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 18,
+      "state": "[8, 5]",
+      "action": "[8, 5]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 2 from 10 to get 8 [10 - 2 = 8] → [5]",
+        "code": "numbers = [2, 5, 10]\nres = numbers[2] - numbers[0]  # 10 - 2 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[8, 5]"
+      },
+      "path_history": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5, 10]\nSubtract 2 from 10 to get 8 [10 - 2 = 8] → [5]\nCode: numbers = [2, 5, 10]\nres = numbers[2] - numbers[0]  # 10 - 2 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]",
+      "evaluation": {
+        "state": "[8, 5]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 8,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [8, 5] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 19,
+      "state": "[10, 10]",
+      "action": "[10, 10]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 5 and 2 to get 10 [5 * 2 = 10] → [10]",
+        "code": "numbers = [2, 5, 10]\nres = numbers[1] * numbers[0]  # 5 * 2 = 10\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[10, 10]"
+      },
+      "path_history": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5, 10]\nMultiply 5 and 2 to get 10 [5 * 2 = 10] → [10]\nCode: numbers = [2, 5, 10]\nres = numbers[1] * numbers[0]  # 5 * 2 = 10\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [10, 10]",
+      "evaluation": {
+        "state": "[10, 10]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 10,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [10, 10] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 20,
+      "state": "[2.0, 2]",
+      "action": "[2.0, 2]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [2]",
+        "code": "numbers = [2, 5, 10]\nres = numbers[2] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.0, 2]"
+      },
+      "path_history": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5, 10]\nDivide 10 by 5 to get 2 [10 / 5 = 2] → [2]\nCode: numbers = [2, 5, 10]\nres = numbers[2] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 2]",
+      "evaluation": {
+        "state": "[2.0, 2]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 2.0,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [2.0, 2] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 21,
+      "state": "[15, 2]",
+      "action": "[15, 2]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 6,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 5 and 10 to get 15 [5 + 10 = 15] → [2]",
+        "code": "numbers = [2, 5, 10]\nres = numbers[1] + numbers[2]  # 5 + 10 = 15\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15, 2]"
+      },
+      "path_history": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [5, 10, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[2] - numbers[0]  # 6 - 4 = 2\nremaining = [numbers[1], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5, 10]\nAdd 5 and 10 to get 15 [5 + 10 = 15] → [2]\nCode: numbers = [2, 5, 10]\nres = numbers[1] + numbers[2]  # 5 + 10 = 15\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15, 2]",
+      "evaluation": {
+        "state": "[15, 2]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 15,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [15, 2] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 22,
+      "state": "[20, 4]",
+      "action": "[20, 4]",
+      "value": 60.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]",
+        "code": "numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[20, 4]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nSubtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]\nCode: numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 4]",
+      "evaluation": {
+        "state": "[20, 4]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 20,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": true,
+          "has_small_adjusters": true,
+          "promising_pattern": true,
+          "llm_boost_factor": 1.2,
+          "two_number_reaches_24": true
+        },
+        "llm_judgments": [
+          "sure",
+          "sure",
+          "sure"
+        ],
+        "reasoning": [
+          "Promising pattern: has number(s) near 24 [20] with small adjuster(s) [4]",
+          "Hard-coded check: [20, 4] can reach 24 with ONE operation!"
+        ],
+        "score_breakdown": {
+          "sure_count": 3,
+          "likely_count": 0,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 60.0,
+          "boosted_score": 60.0,
+          "confidence_level": "high"
+        },
+        "final_value": 60.0,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 23,
+      "state": "[40, 30]",
+      "action": "[40, 30]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 3,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 4 and 10 to get 40 [4 * 10 = 40] → [30, 40]",
+        "code": "numbers = [30, 4, 10]\nres = numbers[1] * numbers[2]  # 4 * 10 = 40\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[40, 30]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nMultiply 4 and 10 to get 40 [4 * 10 = 40] → [30, 40]\nCode: numbers = [30, 4, 10]\nres = numbers[1] * numbers[2]  # 4 * 10 = 40\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [40, 30]",
+      "evaluation": {
+        "state": "[40, 30]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 40,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": true,
+          "has_small_adjusters": false,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [40, 30] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 24,
+      "state": "[3.0, 4]",
+      "action": "[3.0, 4]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 3,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 30 by 10 to get 3 [30 / 10 = 3] → [4, 3]",
+        "code": "numbers = [30, 4, 10]\nres = numbers[0] / numbers[2]  # 30 / 10 = 3\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.0, 4]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nDivide 30 by 10 to get 3 [30 / 10 = 3] → [4, 3]\nCode: numbers = [30, 4, 10]\nres = numbers[0] / numbers[2]  # 30 / 10 = 3\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.0, 4]",
+      "evaluation": {
+        "state": "[3.0, 4]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 4,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [3.0, 4] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 25,
+      "state": "[7.5, 10]",
+      "action": "[7.5, 10]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 3,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 30 by 4 to get 7.5 [30 / 4 = 7.5] → [10, 7.5]",
+        "code": "numbers = [30, 4, 10]\nres = numbers[0] / numbers[1]  # 30 / 4 = 7.5\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[7.5, 10]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nDivide 30 by 4 to get 7.5 [30 / 4 = 7.5] → [10, 7.5]\nCode: numbers = [30, 4, 10]\nres = numbers[0] / numbers[1]  # 30 / 4 = 7.5\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7.5, 10]",
+      "evaluation": {
+        "state": "[7.5, 10]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 10,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [7.5, 10] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 26,
+      "state": "[34, 10]",
+      "action": "[34, 10]",
+      "value": 60.0,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 3,
+      "children_ids": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]",
+        "code": "numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[34, 10]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nAdd 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]\nCode: numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [34, 10]",
+      "evaluation": {
+        "state": "[34, 10]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 34,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": true,
+          "has_small_adjusters": true,
+          "promising_pattern": true,
+          "llm_boost_factor": 1.2,
+          "two_number_reaches_24": true
+        },
+        "llm_judgments": [
+          "sure",
+          "sure",
+          "sure"
+        ],
+        "reasoning": [
+          "Promising pattern: has number(s) near 24 [34] with small adjuster(s) [10]",
+          "Hard-coded check: [34, 10] can reach 24 with ONE operation!"
+        ],
+        "score_breakdown": {
+          "sure_count": 3,
+          "likely_count": 0,
+          "impossible_count": 0,
+          "n_evaluate_sample": 3,
+          "raw_score": 60.0,
+          "boosted_score": 60.0,
+          "confidence_level": "high"
+        },
+        "final_value": 60.0,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 27,
+      "state": "[10, 2.0]",
+      "action": "[10, 2.0]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 4 and 6 to get 10 [4 + 6 = 10] → [2.0, 10]",
+        "code": "numbers = [2.0, 4, 6]\nres = numbers[1] + numbers[2]  # 4 + 6 = 10\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[10, 2.0]"
+      },
+      "path_history": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 4, 6]\nAdd 4 and 6 to get 10 [4 + 6 = 10] → [2.0, 10]\nCode: numbers = [2.0, 4, 6]\nres = numbers[1] + numbers[2]  # 4 + 6 = 10\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [10, 2.0]",
+      "evaluation": {
+        "state": "[10, 2.0]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 10,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [10, 2.0] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 28,
+      "state": "[24, 2.0]",
+      "action": "[24, 2.0]",
+      "value": 0.01,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 4 and 6 to get 24 [4 * 6 = 24] → [2.0]",
+        "code": "numbers = [2.0, 4, 6]\nres = numbers[1] * numbers[2]  # 4 * 6 = 24\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24, 2.0]"
+      },
+      "path_history": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 4, 6]\nMultiply 4 and 6 to get 24 [4 * 6 = 24] → [2.0]\nCode: numbers = [2.0, 4, 6]\nres = numbers[1] * numbers[2]  # 4 * 6 = 24\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24, 2.0]",
+      "evaluation": {
+        "state": "[24, 2.0]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": true
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Contains 24 but not final state - this is a dead-end trap!"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.01
+      }
+    },
+    {
+      "id": 29,
+      "state": "[4.0, 4]",
+      "action": "[4.0, 4]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 2 from 6 to get 4 [6 - 2.0 = 4] → [4, 2.0]",
+        "code": "numbers = [2.0, 4, 6]\nres = numbers[2] - numbers[0]  # 6 - 2 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[4.0, 4]"
+      },
+      "path_history": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 4, 6]\nSubtract 2 from 6 to get 4 [6 - 2.0 = 4] → [4, 2.0]\nCode: numbers = [2.0, 4, 6]\nres = numbers[2] - numbers[0]  # 6 - 2 = 4\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [4.0, 4]",
+      "evaluation": {
+        "state": "[4.0, 4]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 4.0,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [4.0, 4] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 30,
+      "state": "[2, 2.0]",
+      "action": "[2, 2.0]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4 from 6 to get 2 [6 - 4 = 2] → [2.0, 2]",
+        "code": "numbers = [2.0, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2, 2.0]"
+      },
+      "path_history": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → [2.0, 2]\nCode: numbers = [2.0, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 2.0]",
+      "evaluation": {
+        "state": "[2, 2.0]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 2,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [2, 2.0] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 31,
+      "state": "[3.0, 4]",
+      "action": "[3.0, 4]",
+      "value": 0.001,
+      "depth": 2,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 5,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6 by 2 to get 3 [6 / 2.0 = 3.0] → [4, 3.0]",
+        "code": "numbers = [2.0, 4, 6]\nres = numbers[2] / numbers[0]  # 6 / 2 = 3\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.0, 4]"
+      },
+      "path_history": "Divide 10 by 5 to get 2 [10 / 5 = 2] → [4, 6, 2]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] / numbers[1]  # 10 / 5 = 2\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.0, 4, 6]\nDivide 6 by 2 to get 3 [6 / 2.0 = 3.0] → [4, 3.0]\nCode: numbers = [2.0, 4, 6]\nres = numbers[2] / numbers[0]  # 6 / 2 = 3\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.0, 4]",
+      "evaluation": {
+        "state": "[3.0, 4]",
+        "is_final": false,
+        "heuristic_checks": {
+          "has_premature_24": false,
+          "max_abs_value": 4,
+          "has_huge_numbers": false,
+          "all_tiny_numbers": false,
+          "has_number_near_24": false,
+          "has_small_adjusters": true,
+          "promising_pattern": false,
+          "llm_boost_factor": 1.0,
+          "two_number_reaches_24": false
+        },
+        "llm_judgments": [
+          "impossible",
+          "impossible",
+          "impossible"
+        ],
+        "reasoning": [
+          "Hard-coded check: [3.0, 4] CANNOT reach 24 with any single operation"
+        ],
+        "score_breakdown": {
+          "sure_count": 0,
+          "likely_count": 0,
+          "impossible_count": 3,
+          "n_evaluate_sample": 3,
+          "raw_score": 0.003,
+          "boosted_score": 0.003,
+          "confidence_level": "impossible"
+        },
+        "final_value": 0.001,
+        "from_cache": false
+      }
+    },
+    {
+      "id": 32,
+      "state": "[16]",
+      "action": "[16]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 22,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 4 from 20 to get 16 [20 - 4 = 16] → [16]",
+        "code": "numbers = [20, 4]\nres = numbers[0] - numbers[1]  # 20 - 4 = 16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[16]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nSubtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]\nCode: numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 4]\nSubtract 4 from 20 to get 16 [20 - 4 = 16] → [16]\nCode: numbers = [20, 4]\nres = numbers[0] - numbers[1]  # 20 - 4 = 16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [16]",
+      "evaluation": {
+        "state": "[16]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 16, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 33,
+      "state": "[5.0]",
+      "action": "[5.0]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 22,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 20 by 4 to get 5 [20 / 4 = 5] → [5]",
+        "code": "numbers = [20, 4]\nres = numbers[0] / numbers[1]  # 20 / 4 = 5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[5.0]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nSubtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]\nCode: numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 4]\nDivide 20 by 4 to get 5 [20 / 4 = 5] → [5]\nCode: numbers = [20, 4]\nres = numbers[0] / numbers[1]  # 20 / 4 = 5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5.0]",
+      "evaluation": {
+        "state": "[5.0]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 5.0, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 34,
+      "state": "[80]",
+      "action": "[80]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 22,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 20 and 4 to get 80 [20 * 4 = 80] → [80]",
+        "code": "numbers = [20, 4]\nres = numbers[0] * numbers[1]  # 20 * 4 = 80\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[80]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nSubtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]\nCode: numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 4]\nMultiply 20 and 4 to get 80 [20 * 4 = 80] → [80]\nCode: numbers = [20, 4]\nres = numbers[0] * numbers[1]  # 20 * 4 = 80\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [80]",
+      "evaluation": {
+        "state": "[80]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 80, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 35,
+      "state": "[24]",
+      "action": "[24]",
+      "value": 100.0,
+      "depth": 3,
+      "is_solution": true,
+      "is_pruned": false,
+      "parent_id": 22,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 20 and 4 to get 24 [20 + 4 = 24] → [24]",
+        "code": "numbers = [20, 4]\nres = numbers[0] + numbers[1]  # 20 + 4 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nSubtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]\nCode: numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 4]\nAdd 20 and 4 to get 24 [20 + 4 = 24] → [24]\nCode: numbers = [20, 4]\nres = numbers[0] + numbers[1]  # 20 + 4 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24]",
+      "evaluation": {
+        "state": "[24]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": true
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state equals 24 - SOLUTION FOUND!"
+        ],
+        "score_breakdown": {},
+        "final_value": 100.0
+      }
+    },
+    {
+      "id": 36,
+      "state": "[-16]",
+      "action": "[-16]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 22,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 20 from 4 to get -16 [4 - 20 = -16] → [-16]",
+        "code": "numbers = [20, 4]\nres = numbers[1] - numbers[0]  # 4 - 20 = -16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[-16]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nSubtract 10 from 30 to get 20 [30 - 10 = 20] → [4, 20]\nCode: numbers = [30, 4, 10]\nres = numbers[0] - numbers[2]  # 30 - 10 = 20\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 4]\nSubtract 20 from 4 to get -16 [4 - 20 = -16] → [-16]\nCode: numbers = [20, 4]\nres = numbers[1] - numbers[0]  # 4 - 20 = -16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [-16]",
+      "evaluation": {
+        "state": "[-16]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is -16, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 37,
+      "state": "[24]",
+      "action": "[24]",
+      "value": 100.0,
+      "depth": 3,
+      "is_solution": true,
+      "is_pruned": false,
+      "parent_id": 26,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 10 from 34 to get 24 [34 - 10 = 24] → []",
+        "code": "numbers = [34, 10]\nres = numbers[0] - numbers[1]  # 34 - 10 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[24]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nAdd 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]\nCode: numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [34, 10]\nSubtract 10 from 34 to get 24 [34 - 10 = 24] → []\nCode: numbers = [34, 10]\nres = numbers[0] - numbers[1]  # 34 - 10 = 24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [24]",
+      "evaluation": {
+        "state": "[24]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": true
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state equals 24 - SOLUTION FOUND!"
+        ],
+        "score_breakdown": {},
+        "final_value": 100.0
+      }
+    },
+    {
+      "id": 38,
+      "state": "[3.4]",
+      "action": "[3.4]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 26,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 34 by 10 to get 3.4 [34 / 10 = 3.4] → []",
+        "code": "numbers = [34, 10]\nres = numbers[0] / numbers[1]  # 34 / 10 = 3.4\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.4]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nAdd 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]\nCode: numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [34, 10]\nDivide 34 by 10 to get 3.4 [34 / 10 = 3.4] → []\nCode: numbers = [34, 10]\nres = numbers[0] / numbers[1]  # 34 / 10 = 3.4\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.4]",
+      "evaluation": {
+        "state": "[3.4]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3.4, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 39,
+      "state": "[44]",
+      "action": "[44]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 26,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 34 and 10 to get 44 [34 + 10 = 44] → []",
+        "code": "numbers = [34, 10]\nres = numbers[0] + numbers[1]  # 34 + 10 = 44\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[44]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nAdd 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]\nCode: numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [34, 10]\nAdd 34 and 10 to get 44 [34 + 10 = 44] → []\nCode: numbers = [34, 10]\nres = numbers[0] + numbers[1]  # 34 + 10 = 44\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [44]",
+      "evaluation": {
+        "state": "[44]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 44, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 40,
+      "state": "[340]",
+      "action": "[340]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 26,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 34 and 10 to get 340 [34 * 10 = 340] → []",
+        "code": "numbers = [34, 10]\nres = numbers[0] * numbers[1]  # 34 * 10 = 340\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[340]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nAdd 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]\nCode: numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [34, 10]\nMultiply 34 and 10 to get 340 [34 * 10 = 340] → []\nCode: numbers = [34, 10]\nres = numbers[0] * numbers[1]  # 34 * 10 = 340\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [340]",
+      "evaluation": {
+        "state": "[340]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 340, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 41,
+      "state": "[-24]",
+      "action": "[-24]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": false,
+      "parent_id": 26,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 34 from 10 to get -24 [10 - 34 = -24] → []",
+        "code": "numbers = [34, 10]\nres = numbers[1] - numbers[0]  # 10 - 34 = -24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[-24]"
+      },
+      "path_history": "Multiply 5 and 6 to get 30 [5 * 6 = 30] → [4, 10, 30]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0], numbers[3]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 4, 10]\nAdd 30 and 4 to get 34 [30 + 4 = 34] → [10, 34]\nCode: numbers = [30, 4, 10]\nres = numbers[0] + numbers[1]  # 30 + 4 = 34\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [34, 10]\nSubtract 34 from 10 to get -24 [10 - 34 = -24] → []\nCode: numbers = [34, 10]\nres = numbers[1] - numbers[0]  # 10 - 34 = -24\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [-24]",
+      "evaluation": {
+        "state": "[-24]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is -24, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 42,
+      "state": "[3]",
+      "action": "[3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → left: [3]",
+        "code": "numbers = [9, 6]\nres = numbers[0] - numbers[1]  # 9 - 6 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nSubtract 6 from 9 to get 3 [9 - 6 = 3] → left: [3]\nCode: numbers = [9, 6]\nres = numbers[0] - numbers[1]  # 9 - 6 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3]",
+      "evaluation": {
+        "state": "[3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 43,
+      "state": "[15]",
+      "action": "[15]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 9 and 6 to get 15 [9 + 6 = 15] → left: [15]",
+        "code": "numbers = [9, 6]\nres = numbers[0] + numbers[1]  # 9 + 6 = 15\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nAdd 9 and 6 to get 15 [9 + 6 = 15] → left: [15]\nCode: numbers = [9, 6]\nres = numbers[0] + numbers[1]  # 9 + 6 = 15\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15]",
+      "evaluation": {
+        "state": "[15]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 15, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 44,
+      "state": "[54]",
+      "action": "[54]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 9 and 6 to get 54 [9 * 6 = 54] → left: [54]",
+        "code": "numbers = [9, 6]\nres = numbers[0] * numbers[1]  # 9 * 6 = 54\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[54]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nMultiply 9 and 6 to get 54 [9 * 6 = 54] → left: [54]\nCode: numbers = [9, 6]\nres = numbers[0] * numbers[1]  # 9 * 6 = 54\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54]",
+      "evaluation": {
+        "state": "[54]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 54, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 45,
+      "state": "[1.5]",
+      "action": "[1.5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 9 by 6 to get 1.5 [9 / 6 = 1.5] → left: [1.5]",
+        "code": "numbers = [9, 6]\nres = numbers[0] / numbers[1]  # 9 / 6 = 1.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.5]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nDivide 9 by 6 to get 1.5 [9 / 6 = 1.5] → left: [1.5]\nCode: numbers = [9, 6]\nres = numbers[0] / numbers[1]  # 9 / 6 = 1.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.5]",
+      "evaluation": {
+        "state": "[1.5]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 1.5, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 46,
+      "state": "[-3]",
+      "action": "[-3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 7,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 9 from 6 to get -3 (non-standard move) [6 - 9 = -3] → left: [-3]",
+        "code": "numbers = [9, 6]\nres = numbers[1] - numbers[0]  # 6 - 9 = -3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[-3]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 5 from 14 to get 9 [14 - 5 = 9] → [6, 9]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[1]  # 14 - 5 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nSubtract 9 from 6 to get -3 (non-standard move) [6 - 9 = -3] → left: [-3]\nCode: numbers = [9, 6]\nres = numbers[1] - numbers[0]  # 6 - 9 = -3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [-3]",
+      "evaluation": {
+        "state": "[-3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is -3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 47,
+      "state": "[16]",
+      "action": "[16]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 14 from 30 to get 16 [30 - 14 = 16] → [16]",
+        "code": "numbers = [30, 14]\nres = numbers[0] - numbers[1]  # 30 - 14 = 16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[16]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nMultiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]\nCode: numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 14]\nSubtract 14 from 30 to get 16 [30 - 14 = 16] → [16]\nCode: numbers = [30, 14]\nres = numbers[0] - numbers[1]  # 30 - 14 = 16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [16]",
+      "evaluation": {
+        "state": "[16]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 16, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 48,
+      "state": "[-16]",
+      "action": "[-16]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 30 from 14 to get -16 [14 - 30 = -16] → [-16]",
+        "code": "numbers = [30, 14]\nres = numbers[1] - numbers[0]  # 14 - 30 = -16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[-16]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nMultiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]\nCode: numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 14]\nSubtract 30 from 14 to get -16 [14 - 30 = -16] → [-16]\nCode: numbers = [30, 14]\nres = numbers[1] - numbers[0]  # 14 - 30 = -16\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [-16]",
+      "evaluation": {
+        "state": "[-16]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is -16, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 49,
+      "state": "[2.142857142857143]",
+      "action": "[2.142857142857143]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 30 by 14 to get approximately 2.14 [30 / 14 ≈ 2.14] → [2.14]",
+        "code": "numbers = [30, 14]\nres = numbers[0] / numbers[1]  # 30 / 14 ≈ 2.14\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.142857142857143]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nMultiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]\nCode: numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 14]\nDivide 30 by 14 to get approximately 2.14 [30 / 14 ≈ 2.14] → [2.14]\nCode: numbers = [30, 14]\nres = numbers[0] / numbers[1]  # 30 / 14 ≈ 2.14\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.142857142857143]",
+      "evaluation": {
+        "state": "[2.142857142857143]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 2.142857142857143, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 50,
+      "state": "[0.4666666666666667]",
+      "action": "[0.4666666666666667]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 14 by 30 to get approximately 0.47 [14 / 30 ≈ 0.47] → [0.47]",
+        "code": "numbers = [30, 14]\nres = numbers[1] / numbers[0]  # 14 / 30 ≈ 0.47\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.4666666666666667]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nMultiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]\nCode: numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 14]\nDivide 14 by 30 to get approximately 0.47 [14 / 30 ≈ 0.47] → [0.47]\nCode: numbers = [30, 14]\nres = numbers[1] / numbers[0]  # 14 / 30 ≈ 0.47\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.4666666666666667]",
+      "evaluation": {
+        "state": "[0.4666666666666667]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 0.4666666666666667, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 51,
+      "state": "[420]",
+      "action": "[420]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 8,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 30 by 14 to get 420 [30 * 14 = 420] → [420]",
+        "code": "numbers = [30, 14]\nres = numbers[0] * numbers[1]  # 30 * 14 = 420\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[420]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nMultiply 5 and 6 to get 30 [5 * 6 = 30] → [14, 30]\nCode: numbers = [14, 5, 6]\nres = numbers[1] * numbers[2]  # 5 * 6 = 30\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [30, 14]\nMultiply 30 by 14 to get 420 [30 * 14 = 420] → [420]\nCode: numbers = [30, 14]\nres = numbers[0] * numbers[1]  # 30 * 14 = 420\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [420]",
+      "evaluation": {
+        "state": "[420]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 420, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 52,
+      "state": "[12.8]",
+      "action": "[12.8]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 1.2 from 14 to get 12.8 [14 - 1.2 = 12.8] → left: [12.8]",
+        "code": "numbers = [1.2, 14]\nres = numbers[1] - numbers[0]  # 14 - 1.2 = 12.8\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[12.8]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nDivide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]\nCode: numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2, 14]\nSubtract 1.2 from 14 to get 12.8 [14 - 1.2 = 12.8] → left: [12.8]\nCode: numbers = [1.2, 14]\nres = numbers[1] - numbers[0]  # 14 - 1.2 = 12.8\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [12.8]",
+      "evaluation": {
+        "state": "[12.8]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 12.8, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 53,
+      "state": "[15.2]",
+      "action": "[15.2]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 1.2 and 14 to get 15.2 [1.2 + 14 = 15.2] → left: []",
+        "code": "numbers = [1.2, 14]\nres = numbers[0] + numbers[1]  # 1.2 + 14 = 15.2\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15.2]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nDivide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]\nCode: numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2, 14]\nAdd 1.2 and 14 to get 15.2 [1.2 + 14 = 15.2] → left: []\nCode: numbers = [1.2, 14]\nres = numbers[0] + numbers[1]  # 1.2 + 14 = 15.2\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15.2]",
+      "evaluation": {
+        "state": "[15.2]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 15.2, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 54,
+      "state": "[16.8]",
+      "action": "[16.8]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 1.2 and 14 to get 16.8 [1.2 * 14 = 16.8] → left: []",
+        "code": "numbers = [1.2, 14]\nres = numbers[0] * numbers[1]  # 1.2 * 14 = 16.8\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[16.8]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nDivide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]\nCode: numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2, 14]\nMultiply 1.2 and 14 to get 16.8 [1.2 * 14 = 16.8] → left: []\nCode: numbers = [1.2, 14]\nres = numbers[0] * numbers[1]  # 1.2 * 14 = 16.8\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [16.8]",
+      "evaluation": {
+        "state": "[16.8]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 16.8, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 55,
+      "state": "[11.666666666666668]",
+      "action": "[11.666666666666668]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 14 by 1.2 to get 11.666666666666666 [14 / 1.2 = 11.666666666666666] → left: []",
+        "code": "numbers = [1.2, 14]\nres = numbers[1] / numbers[0]  # 14 / 1.2 = 11.666666666666666\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[11.666666666666668]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nDivide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]\nCode: numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2, 14]\nDivide 14 by 1.2 to get 11.666666666666666 [14 / 1.2 = 11.666666666666666] → left: []\nCode: numbers = [1.2, 14]\nres = numbers[1] / numbers[0]  # 14 / 1.2 = 11.666666666666666\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11.666666666666668]",
+      "evaluation": {
+        "state": "[11.666666666666668]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 11.666666666666668, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 56,
+      "state": "[0.08571428571428572]",
+      "action": "[0.08571428571428572]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 9,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 1.2 by 14 to get 0.08571428571428572 [1.2 / 14 = 0.08571428571428572] → left: []",
+        "code": "numbers = [1.2, 14]\nres = numbers[0] / numbers[1]  # 1.2 / 14 = 0.08571428571428572\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.08571428571428572]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nDivide 6 by 5 to get 1.2 [6 / 5 = 1.2] → [14, 1.2]\nCode: numbers = [14, 5, 6]\nres = numbers[2] / numbers[1]  # 6 / 5 = 1.2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2, 14]\nDivide 1.2 by 14 to get 0.08571428571428572 [1.2 / 14 = 0.08571428571428572] → left: []\nCode: numbers = [1.2, 14]\nres = numbers[0] / numbers[1]  # 1.2 / 14 = 0.08571428571428572\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.08571428571428572]",
+      "evaluation": {
+        "state": "[0.08571428571428572]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 0.08571428571428572, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 57,
+      "state": "[3]",
+      "action": "[3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 11 from 14 to get 3 [14 - 11 = 3] → [3]",
+        "code": "numbers = [11, 14]\nres = numbers[1] - numbers[0]  # 14 - 11 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nAdd 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]\nCode: numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 14]\nSubtract 11 from 14 to get 3 [14 - 11 = 3] → [3]\nCode: numbers = [11, 14]\nres = numbers[1] - numbers[0]  # 14 - 11 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3]",
+      "evaluation": {
+        "state": "[3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 58,
+      "state": "[1.2727272727272727]",
+      "action": "[1.2727272727272727]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 14 by 11 to get approximately 1.27 [14 / 11 ≈ 1.27] → [1.27]",
+        "code": "numbers = [11, 14]\nres = numbers[1] / numbers[0]  # 14 / 11 ≈ 1.27\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.2727272727272727]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nAdd 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]\nCode: numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 14]\nDivide 14 by 11 to get approximately 1.27 [14 / 11 ≈ 1.27] → [1.27]\nCode: numbers = [11, 14]\nres = numbers[1] / numbers[0]  # 14 / 11 ≈ 1.27\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.2727272727272727]",
+      "evaluation": {
+        "state": "[1.2727272727272727]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 1.2727272727272727, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 59,
+      "state": "[154]",
+      "action": "[154]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 11 and 14 to get 154 [11 * 14 = 154] → [154]",
+        "code": "numbers = [11, 14]\nres = numbers[0] * numbers[1]  # 11 * 14 = 154\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[154]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nAdd 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]\nCode: numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 14]\nMultiply 11 and 14 to get 154 [11 * 14 = 154] → [154]\nCode: numbers = [11, 14]\nres = numbers[0] * numbers[1]  # 11 * 14 = 154\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [154]",
+      "evaluation": {
+        "state": "[154]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 154, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 60,
+      "state": "[25]",
+      "action": "[25]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 11 to 14 to get 25 [11 + 14 = 25] → [25]",
+        "code": "numbers = [11, 14]\nres = numbers[0] + numbers[1]  # 11 + 14 = 25\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[25]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nAdd 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]\nCode: numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 14]\nAdd 11 to 14 to get 25 [11 + 14 = 25] → [25]\nCode: numbers = [11, 14]\nres = numbers[0] + numbers[1]  # 11 + 14 = 25\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [25]",
+      "evaluation": {
+        "state": "[25]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 25, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 61,
+      "state": "[-3]",
+      "action": "[-3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 10,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 14 from 11 to get -3 [11 - 14 = -3] → [-3]",
+        "code": "numbers = [11, 14]\nres = numbers[0] - numbers[1]  # 11 - 14 = -3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[-3]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nAdd 5 and 6 to get 11 [5 + 6 = 11] → [14, 11]\nCode: numbers = [14, 5, 6]\nres = numbers[1] + numbers[2]  # 5 + 6 = 11\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [11, 14]\nSubtract 14 from 11 to get -3 [11 - 14 = -3] → [-3]\nCode: numbers = [11, 14]\nres = numbers[0] - numbers[1]  # 11 - 14 = -3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [-3]",
+      "evaluation": {
+        "state": "[-3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is -3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 62,
+      "state": "[13]",
+      "action": "[13]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 11,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 8 and 5 to get 13 [8 + 5 = 13] → left: []",
+        "code": "numbers = [8, 5]\nres = numbers[0] + numbers[1]  # 8 + 5 = 13\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[13]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]\nAdd 8 and 5 to get 13 [8 + 5 = 13] → left: []\nCode: numbers = [8, 5]\nres = numbers[0] + numbers[1]  # 8 + 5 = 13\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [13]",
+      "evaluation": {
+        "state": "[13]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 13, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 63,
+      "state": "[3]",
+      "action": "[3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 11,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 5 from 8 to get 3 [8 - 5 = 3] → left: []",
+        "code": "numbers = [8, 5]\nres = numbers[0] - numbers[1]  # 8 - 5 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]\nSubtract 5 from 8 to get 3 [8 - 5 = 3] → left: []\nCode: numbers = [8, 5]\nres = numbers[0] - numbers[1]  # 8 - 5 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3]",
+      "evaluation": {
+        "state": "[3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 64,
+      "state": "[40]",
+      "action": "[40]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 11,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 8 and 5 to get 40 [8 * 5 = 40] → left: []",
+        "code": "numbers = [8, 5]\nres = numbers[0] * numbers[1]  # 8 * 5 = 40\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[40]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]\nMultiply 8 and 5 to get 40 [8 * 5 = 40] → left: []\nCode: numbers = [8, 5]\nres = numbers[0] * numbers[1]  # 8 * 5 = 40\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [40]",
+      "evaluation": {
+        "state": "[40]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 40, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 65,
+      "state": "[1.6]",
+      "action": "[1.6]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 11,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 8 by 5 to get 1.6 [8 / 5 = 1.6] → left: []",
+        "code": "numbers = [8, 5]\nres = numbers[0] / numbers[1]  # 8 / 5 = 1.6\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.6]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]\nDivide 8 by 5 to get 1.6 [8 / 5 = 1.6] → left: []\nCode: numbers = [8, 5]\nres = numbers[0] / numbers[1]  # 8 / 5 = 1.6\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.6]",
+      "evaluation": {
+        "state": "[1.6]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 1.6, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 66,
+      "state": "[0.625]",
+      "action": "[0.625]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 11,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 5 by 8 to get 0.625 [5 / 8 = 0.625] → left: []",
+        "code": "numbers = [8, 5]\nres = numbers[1] / numbers[0]  # 5 / 8 = 0.625\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.625]"
+      },
+      "path_history": "Add 4 and 10 to get 14 [4 + 10 = 14] → [5, 6, 14]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[0] + numbers[3]  # 4 + 10 = 14\nremaining = [numbers[1], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14, 5, 6]\nSubtract 6 from 14 to get 8 [14 - 6 = 8] → [5, 8]\nCode: numbers = [14, 5, 6]\nres = numbers[0] - numbers[2]  # 14 - 6 = 8\nremaining = [numbers[1]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [8, 5]\nDivide 5 by 8 to get 0.625 [5 / 8 = 0.625] → left: []\nCode: numbers = [8, 5]\nres = numbers[1] / numbers[0]  # 5 / 8 = 0.625\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.625]",
+      "evaluation": {
+        "state": "[0.625]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 0.625, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 67,
+      "state": "[54]",
+      "action": "[54]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 12,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 9 and 6 to get 54 [9 * 6 = 54] → left: []",
+        "code": "numbers = [9, 6]\nres = numbers[0] * numbers[1]  # 9 * 6 = 54\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[54]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nAdd 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]\nCode: numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nMultiply 9 and 6 to get 54 [9 * 6 = 54] → left: []\nCode: numbers = [9, 6]\nres = numbers[0] * numbers[1]  # 9 * 6 = 54\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [54]",
+      "evaluation": {
+        "state": "[54]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 54, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 68,
+      "state": "[15]",
+      "action": "[15]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 12,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 9 and 6 to get 15 [9 + 6 = 15] → left: []",
+        "code": "numbers = [9, 6]\nres = numbers[0] + numbers[1]  # 9 + 6 = 15\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[15]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nAdd 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]\nCode: numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nAdd 9 and 6 to get 15 [9 + 6 = 15] → left: []\nCode: numbers = [9, 6]\nres = numbers[0] + numbers[1]  # 9 + 6 = 15\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [15]",
+      "evaluation": {
+        "state": "[15]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 15, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 69,
+      "state": "[3]",
+      "action": "[3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 12,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 9 to get 3 [9 - 6 = 3] → left: []",
+        "code": "numbers = [9, 6]\nres = numbers[0] - numbers[1]  # 9 - 6 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nAdd 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]\nCode: numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nSubtract 6 from 9 to get 3 [9 - 6 = 3] → left: []\nCode: numbers = [9, 6]\nres = numbers[0] - numbers[1]  # 9 - 6 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3]",
+      "evaluation": {
+        "state": "[3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 70,
+      "state": "[1.5]",
+      "action": "[1.5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 12,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 9 by 6 to get 1.5 [9 / 6 = 1.5] → left: []",
+        "code": "numbers = [9, 6]\nres = numbers[0] / numbers[1]  # 9 / 6 = 1.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[1.5]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nAdd 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]\nCode: numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nDivide 9 by 6 to get 1.5 [9 / 6 = 1.5] → left: []\nCode: numbers = [9, 6]\nres = numbers[0] / numbers[1]  # 9 / 6 = 1.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [1.5]",
+      "evaluation": {
+        "state": "[1.5]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 1.5, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 71,
+      "state": "[0.6666666666666666]",
+      "action": "[0.6666666666666666]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 12,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6 by 9 to get 0.6667 [6 / 9 = 0.6667] → left: []",
+        "code": "numbers = [9, 6]\nres = numbers[1] / numbers[0]  # 6 / 9 = 0.6667\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.6666666666666666]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nAdd 5 and 4 to get 9 [5 + 4 = 9] → left: [6, 9]\nCode: numbers = [5, 4, 6]\nres = numbers[0] + numbers[1]  # 5 + 4 = 9\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [9, 6]\nDivide 6 by 9 to get 0.6667 [6 / 9 = 0.6667] → left: []\nCode: numbers = [9, 6]\nres = numbers[1] / numbers[0]  # 6 / 9 = 0.6667\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.6666666666666666]",
+      "evaluation": {
+        "state": "[0.6666666666666666]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 0.6666666666666666, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 72,
+      "state": "[14]",
+      "action": "[14]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 6 from 20 to get 14 [20 - 6 = 14] → [14]",
+        "code": "numbers = [20, 6]\nres = numbers[0] - numbers[1]  # 20 - 6 = 14\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[14]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]\nCode: numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 6]\nSubtract 6 from 20 to get 14 [20 - 6 = 14] → [14]\nCode: numbers = [20, 6]\nres = numbers[0] - numbers[1]  # 20 - 6 = 14\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [14]",
+      "evaluation": {
+        "state": "[14]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 14, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 73,
+      "state": "[3.3333333333333335]",
+      "action": "[3.3333333333333335]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 20 by 6 to get approximately 3.33 [20 / 6 ≈ 3.33] → [3.33]",
+        "code": "numbers = [20, 6]\nres = numbers[0] / numbers[1]  # 20 / 6 ≈ 3.33\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3.3333333333333335]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]\nCode: numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 6]\nDivide 20 by 6 to get approximately 3.33 [20 / 6 ≈ 3.33] → [3.33]\nCode: numbers = [20, 6]\nres = numbers[0] / numbers[1]  # 20 / 6 ≈ 3.33\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3.3333333333333335]",
+      "evaluation": {
+        "state": "[3.3333333333333335]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3.3333333333333335, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 74,
+      "state": "[120]",
+      "action": "[120]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 20 and 6 to get 120 [20 * 6 = 120] → []",
+        "code": "numbers = [20, 6]\nres = numbers[0] * numbers[1]  # 20 * 6 = 120\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[120]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]\nCode: numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 6]\nMultiply 20 and 6 to get 120 [20 * 6 = 120] → []\nCode: numbers = [20, 6]\nres = numbers[0] * numbers[1]  # 20 * 6 = 120\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [120]",
+      "evaluation": {
+        "state": "[120]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 120, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 75,
+      "state": "[26]",
+      "action": "[26]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 20 and 6 to get 26 [20 + 6 = 26] → []",
+        "code": "numbers = [20, 6]\nres = numbers[0] + numbers[1]  # 20 + 6 = 26\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[26]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]\nCode: numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 6]\nAdd 20 and 6 to get 26 [20 + 6 = 26] → []\nCode: numbers = [20, 6]\nres = numbers[0] + numbers[1]  # 20 + 6 = 26\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [26]",
+      "evaluation": {
+        "state": "[26]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 26, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 76,
+      "state": "[0.3]",
+      "action": "[0.3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 13,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 6 by 20 to get 0.3 [6 / 20 = 0.3] → [0.3]",
+        "code": "numbers = [20, 6]\nres = numbers[1] / numbers[0]  # 6 / 20 = 0.3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.3]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nMultiply 5 and 4 to get 20 [5 * 4 = 20] → left: [6, 20]\nCode: numbers = [5, 4, 6]\nres = numbers[0] * numbers[1]  # 5 * 4 = 20\nremaining = [numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [20, 6]\nDivide 6 by 20 to get 0.3 [6 / 20 = 0.3] → [0.3]\nCode: numbers = [20, 6]\nres = numbers[1] / numbers[0]  # 6 / 20 = 0.3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.3]",
+      "evaluation": {
+        "state": "[0.3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 0.3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 77,
+      "state": "[7]",
+      "action": "[7]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Add 2 and 5 to get 7 [2 + 5 = 7] → [7]",
+        "code": "numbers = [2, 5]\nres = numbers[0] + numbers[1]  # 2 + 5 = 7\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[7]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5]\nAdd 2 and 5 to get 7 [2 + 5 = 7] → [7]\nCode: numbers = [2, 5]\nres = numbers[0] + numbers[1]  # 2 + 5 = 7\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [7]",
+      "evaluation": {
+        "state": "[7]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 7, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 78,
+      "state": "[3]",
+      "action": "[3]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Subtract 2 from 5 to get 3 [5 - 2 = 3] → [3]",
+        "code": "numbers = [2, 5]\nres = numbers[1] - numbers[0]  # 5 - 2 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[3]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5]\nSubtract 2 from 5 to get 3 [5 - 2 = 3] → [3]\nCode: numbers = [2, 5]\nres = numbers[1] - numbers[0]  # 5 - 2 = 3\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [3]",
+      "evaluation": {
+        "state": "[3]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 3, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 79,
+      "state": "[10]",
+      "action": "[10]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Multiply 2 and 5 to get 10 [2 * 5 = 10] → [10]",
+        "code": "numbers = [2, 5]\nres = numbers[0] * numbers[1]  # 2 * 5 = 10\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[10]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5]\nMultiply 2 and 5 to get 10 [2 * 5 = 10] → [10]\nCode: numbers = [2, 5]\nres = numbers[0] * numbers[1]  # 2 * 5 = 10\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [10]",
+      "evaluation": {
+        "state": "[10]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 10, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 80,
+      "state": "[2.5]",
+      "action": "[2.5]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 5 by 2 to get 2.5 [5 / 2 = 2.5] → [2.5]",
+        "code": "numbers = [2, 5]\nres = numbers[1] / numbers[0]  # 5 / 2 = 2.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[2.5]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5]\nDivide 5 by 2 to get 2.5 [5 / 2 = 2.5] → [2.5]\nCode: numbers = [2, 5]\nres = numbers[1] / numbers[0]  # 5 / 2 = 2.5\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2.5]",
+      "evaluation": {
+        "state": "[2.5]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 2.5, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    },
+    {
+      "id": 81,
+      "state": "[0.4]",
+      "action": "[0.4]",
+      "value": 0.001,
+      "depth": 3,
+      "is_solution": false,
+      "is_pruned": true,
+      "parent_id": 14,
+      "children_ids": [],
+      "current_numbers": "",
+      "codeact": {
+        "thought": "Divide 2 by 5 to get 0.4 [2 / 5 = 0.4] → [0.4]",
+        "code": "numbers = [2, 5]\nres = numbers[0] / numbers[1]  # 2 / 5 = 0.4\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)",
+        "observation": "[0.4]"
+      },
+      "path_history": "Subtract 5 from 10 to get 5 [10 - 5 = 5] → [4, 6, 5]\nCode: numbers = [4, 5, 6, 10]\nres = numbers[3] - numbers[1]  # 10 - 5 = 5\nremaining = [numbers[0], numbers[2]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [5, 4, 6]\nSubtract 4 from 6 to get 2 [6 - 4 = 2] → left: [5, 2]\nCode: numbers = [5, 4, 6]\nres = numbers[2] - numbers[1]  # 6 - 4 = 2\nremaining = [numbers[0]]\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [2, 5]\nDivide 2 by 5 to get 0.4 [2 / 5 = 0.4] → [0.4]\nCode: numbers = [2, 5]\nres = numbers[0] / numbers[1]  # 2 / 5 = 0.4\nremaining = []\nnew_numbers = [res] + remaining\nprint(new_numbers)\nResult: [0.4]",
+      "evaluation": {
+        "state": "[0.4]",
+        "is_final": true,
+        "heuristic_checks": {
+          "is_single_number": true,
+          "is_solution": false
+        },
+        "llm_judgments": [],
+        "reasoning": [
+          "Final state is 0.4, not 24 - WRONG ANSWER"
+        ],
+        "score_breakdown": {},
+        "final_value": 0.001
+      }
+    }
+  ],
+  "solutions": [
+    35,
+    37
+  ]
+}

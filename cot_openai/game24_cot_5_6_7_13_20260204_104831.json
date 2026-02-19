@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:31.950029",
+    "model": "gpt-4o-mini",
+    "temperature": 0.7,
+    "elapsed_time_seconds": 1.74
+  },
+  "problem": {
+    "numbers": [
+      5,
+      6,
+      7,
+      13
+    ],
+    "input_string": "5 6 7 13"
+  },
+  "solution": {
+    "steps": [
+      "13 - 7 = 6 (left: 5 6 6)",
+      "6 * 6 = 36 (left: 5 36)",
+      "36 - 5 = 31 (left: 31)"
+    ],
+    "final_result": "31",
+    "expression": "(13 - 7) * 6",
+    "is_solution": false,
+    "has_arithmetic_errors": false,
+    "arithmetic_errors": [],
+    "raw_response": "13 - 7 = 6 (left: 5 6 6)  \n6 * 6 = 36 (left: 5 36)  \n36 - 5 = 31 (left: 31)  \nAnswer: (13 - 7) * 6"
+  }
+}

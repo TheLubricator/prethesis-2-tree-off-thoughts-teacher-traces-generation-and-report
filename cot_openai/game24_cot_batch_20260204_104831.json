@@ -1,0 +1,669 @@
+{
+  "metadata": {
+    "timestamp": "2026-02-04T10:48:31.951027",
+    "total_puzzles": 22,
+    "model": "gpt-4o-mini"
+  },
+  "results": [
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:47:50.462738",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.22
+      },
+      "problem": {
+        "numbers": [
+          4,
+          5,
+          6,
+          10
+        ],
+        "input_string": "4 5 6 10"
+      },
+      "solution": {
+        "steps": [
+          "10 - 6 = 4 (left: 4 5 4)",
+          "4 + 4 = 8 (left: 5 8)",
+          "5 * 8 = 40 (left: 40)"
+        ],
+        "final_result": "40",
+        "expression": "(10 - 6) + (4 + 4) * 5",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "10 - 6 = 4 (left: 4 5 4)  \n4 + 4 = 8 (left: 5 8)  \n5 * 8 = 40 (left: 40)  \nAnswer: (10 - 6) + (4 + 4) * 5"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:47:52.287164",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.82
+      },
+      "problem": {
+        "numbers": [
+          1,
+          2,
+          4,
+          7
+        ],
+        "input_string": "1 2 4 7"
+      },
+      "solution": {
+        "steps": [
+          "4 * 2 = 8 (left: 1 7 8)",
+          "7 - 1 = 6 (left: 6 8)",
+          "6 * 8 = 48 (left: 48)"
+        ],
+        "final_result": "48",
+        "expression": "(4 * 2) * (7 - 1)",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "4 * 2 = 8 (left: 1 7 8)  \n7 - 1 = 6 (left: 6 8)  \n6 * 8 = 48 (left: 48)  \nAnswer: (4 * 2) * (7 - 1)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:47:54.364825",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.08
+      },
+      "problem": {
+        "numbers": [
+          2,
+          5,
+          8,
+          11
+        ],
+        "input_string": "2 5 8 11"
+      },
+      "solution": {
+        "steps": [
+          "11 - 2 = 9 (left: 5 8 9)",
+          "5 + 9 = 14 (left: 8 14)",
+          "14 * 8 = 112 (left: 112)"
+        ],
+        "final_result": "112",
+        "expression": "(5 + (11 - 2)) * 8",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "11 - 2 = 9 (left: 5 8 9)  \n5 + 9 = 14 (left: 8 14)  \n14 * 8 = 112 (left: 112)  \nAnswer: (5 + (11 - 2)) * 8  "
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:47:56.332962",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.97
+      },
+      "problem": {
+        "numbers": [
+          3,
+          4,
+          4,
+          13
+        ],
+        "input_string": "3 4 4 13"
+      },
+      "solution": {
+        "steps": [
+          "13 - 4 = 9 (left: 3 4 9)",
+          "4 * 3 = 12 (left: 9 12)",
+          "9 + 12 = 21 (left: 21)"
+        ],
+        "final_result": "21",
+        "expression": "(4 * 3) + (13 - 4)",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "13 - 4 = 9 (left: 3 4 9)  \n4 * 3 = 12 (left: 9 12)  \n9 + 12 = 21 (left: 21)  \nAnswer: (4 * 3) + (13 - 4)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:47:58.313392",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.98
+      },
+      "problem": {
+        "numbers": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "input_string": "6 7 8 9"
+      },
+      "solution": {
+        "steps": [
+          "8 - 6 = 2 (left: 2 7 9)",
+          "9 - 7 = 2 (left: 2 2)",
+          "2 * 2 = 4 (left: 4)"
+        ],
+        "final_result": "4",
+        "expression": "(9 - 7) * (8 - 6)",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "8 - 6 = 2 (left: 2 7 9)  \n9 - 7 = 2 (left: 2 2)  \n2 * 2 = 4 (left: 4)  \nAnswer: (9 - 7) * (8 - 6)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:00.231206",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.92
+      },
+      "problem": {
+        "numbers": [
+          1,
+          11,
+          11,
+          13
+        ],
+        "input_string": "1 11 11 13"
+      },
+      "solution": {
+        "steps": [
+          "11 - 1 = 10 (left: 10 11 13)",
+          "13 - 10 = 3 (left: 3 11)",
+          "3 * 11 = 33 (left: 33)"
+        ],
+        "final_result": "33",
+        "expression": "(11 - 1) * (11 - (13 - 10))",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "11 - 1 = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n3 * 11 = 33 (left: 33)\nAnswer: (11 - 1) * (11 - (13 - 10))"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:02.689246",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.46
+      },
+      "problem": {
+        "numbers": [
+          1,
+          8,
+          10,
+          11
+        ],
+        "input_string": "1 8 10 11"
+      },
+      "solution": {
+        "steps": [
+          "11 - 1 = 10 (left: 8 10 10)",
+          "10 / 10 = 1 (left: 8 1)",
+          "8 * 1 = 8 (left: 8)"
+        ],
+        "final_result": "8",
+        "expression": "(11 - 1) * (10 / 10)",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "11 - 1 = 10 (left: 8 10 10)  \n10 / 10 = 1 (left: 8 1)  \n8 * 1 = 8 (left: 8)  \nAnswer: (11 - 1) * (10 / 10)  "
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:04.624104",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.93
+      },
+      "problem": {
+        "numbers": [
+          2,
+          3,
+          6,
+          9
+        ],
+        "input_string": "2 3 6 9"
+      },
+      "solution": {
+        "steps": [
+          "6 / 3 = 2 (left: 2 2 9)",
+          "2 + 2 = 4 (left: 4 9)",
+          "4 * 9 = 36 (left: 36)"
+        ],
+        "final_result": "36",
+        "expression": "(2 + 2) * 9",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "6 / 3 = 2 (left: 2 2 9)  \n2 + 2 = 4 (left: 4 9)  \n4 * 9 = 36 (left: 36)  \nAnswer: (2 + 2) * 9"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:06.688265",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.06
+      },
+      "problem": {
+        "numbers": [
+          1,
+          3,
+          5,
+          9
+        ],
+        "input_string": "1 3 5 9"
+      },
+      "solution": {
+        "steps": [
+          "9 - 5 = 4 (left: 1 3 4)",
+          "4 * 3 = 12 (left: 1 12)",
+          "12 * 2 = 24 (left: 24)"
+        ],
+        "final_result": "24",
+        "expression": "(4 * 3) * (9 - 5)",
+        "is_solution": true,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 * 2 = 24 (left: 24)\nAnswer: (4 * 3) * (9 - 5)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:09.274714",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.59
+      },
+      "problem": {
+        "numbers": [
+          3,
+          3,
+          7,
+          12
+        ],
+        "input_string": "3 3 7 12"
+      },
+      "solution": {
+        "steps": [
+          "12 - 7 = 5 (left: 3 3 5)",
+          "3 + 5 = 8 (left: 3 8)",
+          "3 * 8 = 24 (left: 24)"
+        ],
+        "final_result": "24",
+        "expression": "(3 + (12 - 7)) * 3",
+        "is_solution": true,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "12 - 7 = 5 (left: 3 3 5)  \n3 + 5 = 8 (left: 3 8)  \n3 * 8 = 24 (left: 24)  \nAnswer: (3 + (12 - 7)) * 3"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:11.195477",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.92
+      },
+      "problem": {
+        "numbers": [
+          4,
+          5,
+          7,
+          9
+        ],
+        "input_string": "4 5 7 9"
+      },
+      "solution": {
+        "steps": [
+          "9 - 4 = 5 (left: 5 5 7)",
+          "5 + 5 = 10 (left: 10 7)",
+          "10 * 7 = 70 (left: 70)"
+        ],
+        "final_result": "70",
+        "expression": "(9 - 4) + (5 + 5) * 7",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "9 - 4 = 5 (left: 5 5 7)\n5 + 5 = 10 (left: 10 7)\n10 * 7 = 70 (left: 70)\nAnswer: (9 - 4) + (5 + 5) * 7"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:13.020571",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.82
+      },
+      "problem": {
+        "numbers": [
+          1,
+          2,
+          8,
+          13
+        ],
+        "input_string": "1 2 8 13"
+      },
+      "solution": {
+        "steps": [
+          "13 - 1 = 12 (left: 2 8 12)",
+          "12 - 2 = 10 (left: 8 10)",
+          "10 * 8 = 80 (left: 80)"
+        ],
+        "final_result": "80",
+        "expression": "(13 - 1) * (2 + 8)",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "13 - 1 = 12 (left: 2 8 12)  \n12 - 2 = 10 (left: 8 10)  \n10 * 8 = 80 (left: 80)  \nAnswer: (13 - 1) * (2 + 8)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:15.008424",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.99
+      },
+      "problem": {
+        "numbers": [
+          4,
+          6,
+          6,
+          9
+        ],
+        "input_string": "4 6 6 9"
+      },
+      "solution": {
+        "steps": [
+          "6 - 4 = 2 (left: 2 6 9)",
+          "6 * 2 = 12 (left: 12 9)",
+          "12 + 9 = 21 (left: 21)"
+        ],
+        "final_result": "21",
+        "expression": "(6 - 4) * 6 + 9",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "6 - 4 = 2 (left: 2 6 9)  \n6 * 2 = 12 (left: 12 9)  \n12 + 9 = 21 (left: 21)  \nAnswer: (6 - 4) * 6 + 9"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:16.758720",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.75
+      },
+      "problem": {
+        "numbers": [
+          1,
+          4,
+          4,
+          8
+        ],
+        "input_string": "1 4 4 8"
+      },
+      "solution": {
+        "steps": [
+          "8 / 4 = 2 (left: 1 2 4)",
+          "1 + 2 = 3 (left: 3 4)",
+          "3 * 4 = 12 (left: 12)"
+        ],
+        "final_result": "12",
+        "expression": "(1 + 8 / 4) * 4",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "8 / 4 = 2 (left: 1 2 4)  \n1 + 2 = 3 (left: 3 4)  \n3 * 4 = 12 (left: 12)  \nAnswer: (1 + 8 / 4) * 4"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:18.568144",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.81
+      },
+      "problem": {
+        "numbers": [
+          1,
+          5,
+          10,
+          11
+        ],
+        "input_string": "1 5 10 11"
+      },
+      "solution": {
+        "steps": [
+          "11 - 1 = 10 (left: 5 10 10)",
+          "5 * 10 = 50 (left: 10 50)",
+          "50 / 10 = 5 (left: 5)"
+        ],
+        "final_result": "5",
+        "expression": "(11 - 1) * (5 * 10) / 10",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "11 - 1 = 10 (left: 5 10 10)  \n5 * 10 = 50 (left: 10 50)  \n50 / 10 = 5 (left: 5)  \nAnswer: (11 - 1) * (5 * 10) / 10"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:20.729266",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.16
+      },
+      "problem": {
+        "numbers": [
+          3,
+          4,
+          6,
+          11
+        ],
+        "input_string": "3 4 6 11"
+      },
+      "solution": {
+        "steps": [
+          "11 - 6 = 5 (left: 3 4 5)",
+          "5 + 4 = 9 (left: 3 9)",
+          "3 * 9 = 27 (left: 27)"
+        ],
+        "final_result": "27",
+        "expression": "3 * (4 + (11 - 6))",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "11 - 6 = 5 (left: 3 4 5)\n5 + 4 = 9 (left: 3 9)\n3 * 9 = 27 (left: 27)\nAnswer: 3 * (4 + (11 - 6))"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:22.738624",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 2.01
+      },
+      "problem": {
+        "numbers": [
+          2,
+          4,
+          8,
+          9
+        ],
+        "input_string": "2 4 8 9"
+      },
+      "solution": {
+        "steps": [
+          "8 / 4 = 2 (left: 2 2 9)",
+          "2 + 2 = 4 (left: 4 9)",
+          "4 * 9 = 36 (left: 36)"
+        ],
+        "final_result": "36",
+        "expression": "(2 + 2) * 9",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "8 / 4 = 2 (left: 2 2 9)  \n2 + 2 = 4 (left: 4 9)  \n4 * 9 = 36 (left: 36)  \nAnswer: (2 + 2) * 9  "
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:24.696581",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.96
+      },
+      "problem": {
+        "numbers": [
+          1,
+          4,
+          5,
+          13
+        ],
+        "input_string": "1 4 5 13"
+      },
+      "solution": {
+        "steps": [
+          "13 - 5 = 8 (left: 1 4 8)",
+          "4 * 8 = 32 (left: 1 32)",
+          "32 - 1 = 31 (left: 31)"
+        ],
+        "final_result": "31",
+        "expression": "(4 * (13 - 5)) - 1",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "13 - 5 = 8 (left: 1 4 8)  \n4 * 8 = 32 (left: 1 32)  \n32 - 1 = 31 (left: 31)  \nAnswer: (4 * (13 - 5)) - 1"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:26.549680",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.85
+      },
+      "problem": {
+        "numbers": [
+          2,
+          2,
+          7,
+          12
+        ],
+        "input_string": "2 2 7 12"
+      },
+      "solution": {
+        "steps": [
+          "12 - 7 = 5 (left: 2 2 5)",
+          "2 + 2 = 4 (left: 4 5)",
+          "4 * 5 = 20 (left: 20)"
+        ],
+        "final_result": "20",
+        "expression": "(2 + 2) * (12 - 7)",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "12 - 7 = 5 (left: 2 2 5)  \n2 + 2 = 4 (left: 4 5)  \n4 * 5 = 20 (left: 20)  \nAnswer: (2 + 2) * (12 - 7)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:28.410289",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.86
+      },
+      "problem": {
+        "numbers": [
+          3,
+          3,
+          6,
+          7
+        ],
+        "input_string": "3 3 6 7"
+      },
+      "solution": {
+        "steps": [
+          "7 - 6 = 1 (left: 1 3 3)",
+          "3 + 1 = 4 (left: 4 3)",
+          "4 * 3 = 12 (left: 12)"
+        ],
+        "final_result": "12",
+        "expression": "(3 + (7 - 6)) * 3",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "7 - 6 = 1 (left: 1 3 3)\n3 + 1 = 4 (left: 4 3)\n4 * 3 = 12 (left: 12)\nAnswer: (3 + (7 - 6)) * 3"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:30.163550",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.75
+      },
+      "problem": {
+        "numbers": [
+          1,
+          5,
+          9,
+          13
+        ],
+        "input_string": "1 5 9 13"
+      },
+      "solution": {
+        "steps": [
+          "13 - 9 = 4 (left: 1 4 5)",
+          "4 * 5 = 20 (left: 1 20)",
+          "20 + 4 = 24 (left: 24)"
+        ],
+        "final_result": "24",
+        "expression": "(13 - 9) * 5 + (4)",
+        "is_solution": true,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "13 - 9 = 4 (left: 1 4 5)\n4 * 5 = 20 (left: 1 20)\n20 + 4 = 24 (left: 24)\nAnswer: (13 - 9) * 5 + (4)"
+      }
+    },
+    {
+      "metadata": {
+        "timestamp": "2026-02-04T10:48:31.950029",
+        "model": "gpt-4o-mini",
+        "temperature": 0.7,
+        "elapsed_time_seconds": 1.74
+      },
+      "problem": {
+        "numbers": [
+          5,
+          6,
+          7,
+          13
+        ],
+        "input_string": "5 6 7 13"
+      },
+      "solution": {
+        "steps": [
+          "13 - 7 = 6 (left: 5 6 6)",
+          "6 * 6 = 36 (left: 5 36)",
+          "36 - 5 = 31 (left: 31)"
+        ],
+        "final_result": "31",
+        "expression": "(13 - 7) * 6",
+        "is_solution": false,
+        "has_arithmetic_errors": false,
+        "arithmetic_errors": [],
+        "raw_response": "13 - 7 = 6 (left: 5 6 6)  \n6 * 6 = 36 (left: 5 36)  \n36 - 5 = 31 (left: 31)  \nAnswer: (13 - 7) * 6"
+      }
+    }
+  ]
+}
